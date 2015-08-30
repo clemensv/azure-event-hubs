@@ -1,3 +1,7 @@
+lib/
+c/lib/
+c/external/
+
 # Compiled object files
 *.o
 
@@ -181,3 +185,5 @@ Buildx86retail.dat
 
 #version file
 **/build/**/version.txt
+
+
