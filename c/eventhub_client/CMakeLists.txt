@@ -1,0 +1,28 @@
+#
+# eventhub_client
+#
+
+file(GLOB_RECURSE EVENTHUB_CLIENT_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c)
+
+list(SORT EVENTHUB_CLIENT_SOURCES)
+create_source_group("Source Files" "${CMAKE_CURRENT_SOURCE_DIR}/src/" ${EVENTHUB_CLIENT_SOURCES})
+include_directories(${CMAKE_SOURCE_DIR}/common/inc)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
+
+find_package(Threads REQUIRED)
+
+add_library(eventhub_client STATIC ${EVENTHUB_CLIENT_SOURCES})
+
+target_link_libraries (eventhub_client ${CMAKE_THREAD_LIBS_INIT}
+    $<TARGET_FILE:eventhub_common> 
+    ${${PROJECT_NAME}_EXTERNAL_LIBRARIES})
+
+#GET_PROPERTY(eventhub_client_location TARGET eventhub_client PROPERTY LOCATION)
+
+add_dependencies(eventhub_client eventhub_common)
+add_dependencies(core eventhub_client)
+
+
+add_subdirectory(samples)

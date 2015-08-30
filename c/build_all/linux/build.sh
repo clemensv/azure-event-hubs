@@ -144,7 +144,7 @@ _run_tests ()
     for test_module in $(find . -maxdepth 1 -name "*$1*" -executable)
     do
         echo "  ${test_module#./}"
-        stdbuf -o 0 -e 0 $test_module &>> $logfile || let "num_failed += $?"
+        stdbuf -o 0 -e 0 $test_module &> $logfile || let "num_failed += $?"
     done
 
     print_test_pass_result $num_failed $logfile

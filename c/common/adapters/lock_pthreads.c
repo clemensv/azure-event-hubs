@@ -18,8 +18,8 @@ IN THE SOFTWARE.
 */
 
 #include "lock.h"
-#include<pthread.h>
-#include<stdlib.h>
+#include <pthread.h>
+#include <stdlib.h>
 #include "iot_logging.h"
 
 DEFINE_ENUM_STRINGS(LOCK_RESULT, LOCK_RESULT_VALUES);

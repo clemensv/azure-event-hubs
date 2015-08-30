@@ -1,0 +1,11 @@
+#add_definitions(-mavx)
+add_definitions(-msse4.2)
+#add_definitions(-std=c++11)
+add_definitions(-Weffc++)
+add_definitions(-pedantic)
+#add_definitions(-O3)
+add_definitions(-Wall)
+add_definitions(-Wextra)
+add_definitions(-Wcast-align)
+add_definitions(-w)
+

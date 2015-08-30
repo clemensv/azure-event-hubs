@@ -1,0 +1,13 @@
+# Target labels
+ qpid_proton
+# Source files and their labels
+/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles/qpid_proton
+/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles/qpid_proton.rule
+/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles/qpid_proton-complete.rule
+/Users/clemensv/Github/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/qpid_proton-install.rule
+/Users/clemensv/Github/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/qpid_proton-mkdir.rule
+/Users/clemensv/Github/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/qpid_proton-download.rule
+/Users/clemensv/Github/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/qpid_proton-update.rule
+/Users/clemensv/Github/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/qpid_proton-patch.rule
+/Users/clemensv/Github/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/qpid_proton-configure.rule
+/Users/clemensv/Github/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/qpid_proton-build.rule

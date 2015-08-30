@@ -1,0 +1,10 @@
+# Hashes of file build rules.
+3792505bb98cd9da531e560c67cd93cc ../external/qpid-proton/src/qpid_proton-stamp/qpid_proton-build
+0cc8f7922c0e4251c551d1f8da403d82 ../external/qpid-proton/src/qpid_proton-stamp/qpid_proton-configure
+14823709034d45a40197958fca9bc876 ../external/qpid-proton/src/qpid_proton-stamp/qpid_proton-download
+8d05e425f17951579280364063fdcd8a ../external/qpid-proton/src/qpid_proton-stamp/qpid_proton-install
+500ee3ca100f02adb53f56130a76385c ../external/qpid-proton/src/qpid_proton-stamp/qpid_proton-mkdir
+fec62cb751861dbb0b58dec9482704d2 ../external/qpid-proton/src/qpid_proton-stamp/qpid_proton-patch
+dd0783291a5a55f16364180de5e4175c ../external/qpid-proton/src/qpid_proton-stamp/qpid_proton-update
+4346c0e504a247128f52af987f22384b CMakeFiles/qpid_proton
+025c0846e54f5a0d8188a1f02de512ba CMakeFiles/qpid_proton-complete
