@@ -1,4 +1,4 @@
-# Install script for directory: /Users/clemensv/Github/azure-event-hubs/c
+# Install script for directory: /opt/git/azure-event-hubs/c
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,11 +27,16 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+# Install shared libraries without execute permission?
+if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/clemensv/Github/azure-event-hubs/c/build/common/cmake_install.cmake")
-  include("/Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/cmake_install.cmake")
-  include("/Users/clemensv/Github/azure-event-hubs/c/build/testtools/cmake_install.cmake")
+  include("/opt/git/azure-event-hubs/c/build/common/cmake_install.cmake")
+  include("/opt/git/azure-event-hubs/c/build/eventhub_client/cmake_install.cmake")
+  include("/opt/git/azure-event-hubs/c/build/testtools/cmake_install.cmake")
 
 endif()
 
@@ -43,5 +48,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/clemensv/Github/azure-event-hubs/c/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/opt/git/azure-event-hubs/c/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

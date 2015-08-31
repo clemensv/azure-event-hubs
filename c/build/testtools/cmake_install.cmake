@@ -1,4 +1,4 @@
-# Install script for directory: /Users/clemensv/Github/azure-event-hubs/c/testtools
+# Install script for directory: /opt/git/azure-event-hubs/c/testtools
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,9 +27,14 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+# Install shared libraries without execute permission?
+if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/clemensv/Github/azure-event-hubs/c/build/testtools/eventhub_test/cmake_install.cmake")
+  include("/opt/git/azure-event-hubs/c/build/testtools/eventhub_test/cmake_install.cmake")
 
 endif()
 

@@ -19,7 +19,7 @@ if(QPID_PROTON_FOUND)
 else(QPID_PROTON_FOUND)
    include(build_qpid_proton_dependency)
    include_directories(${EP_INSTALL}/qpid-proton/include)
-   list(APPEND ${PROJECT_NAME}_EXTERNAL_LIBRARIES "${EP_INSTALL}/qpid-proton/lib64/libqpid-proton.dylib")   
+   list(APPEND ${PROJECT_NAME}_EXTERNAL_LIBRARIES "${EP_INSTALL}/qpid-proton/lib/libqpid-proton.dylib")   
 endif()
 
 

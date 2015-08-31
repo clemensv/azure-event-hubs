@@ -17,10 +17,12 @@ add_executable (send_sample ${SEND_SAMPLE_SOURCES})
 
 # Libraries to link in reverse order because that's what ld requires.
 target_link_libraries (send_sample
-    ${CMAKE_THREAD_LIBS_INIT}
-    $<TARGET_FILE:eventhub_common>  
     $<TARGET_FILE:eventhub_client> 
-    ${${PROJECT_NAME}_EXTERNAL_LIBRARIES})
+    $<TARGET_FILE:eventhub_common>  
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${${PROJECT_NAME}_EXTERNAL_LIBRARIES}
+    )
+  
 
 add_dependencies(send_sample eventhub_client)
 add_dependencies(samples send_sample)
