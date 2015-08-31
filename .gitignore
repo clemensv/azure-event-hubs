@@ -187,3 +187,7 @@ Buildx86retail.dat
 **/build/**/version.txt
 
 
+CMakeCache.txt
+CMakeFiles/
+
+nbproject

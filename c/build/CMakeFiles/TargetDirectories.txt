@@ -1,8 +1,0 @@
-/Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir
-/Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir
-/Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/samples/send/CMakeFiles/send_sample.dir
-/Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/CMakeFiles/eventhub_client.dir
-/Users/clemensv/Github/azure-event-hubs/c/build/testtools/eventhub_test/CMakeFiles/eventhub_test.dir
-/Users/clemensv/Github/azure-event-hubs/c/build/common/CMakeFiles/eventhub_common.dir
-/Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/samples/CMakeFiles/samples.dir
-/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles/core.dir

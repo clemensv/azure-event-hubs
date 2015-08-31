@@ -22,28 +22,6 @@ do
   esac
 done
 
-echo "----------------------------------------"
-echo "Cloning submodules"
-echo "----------------------------------------"
-
-# Getting Proton
-if [ ! -d "lib/qpid-proton" ]; then
-    echo "git clone https://github.com/apache/qpid-proton.git c/lib/qpid-proton"
-    git clone https://github.com/apache/qpid-proton.git c/lib/qpid-proton
-fi
-
-if [ ! -d "c/lib/qpid-proton/build" ]; then
-    mkdir c/lib/qpid-proton/build
-fi
-
-# Compiling Proton-C
-echo "----------------------------------------"
-echo "Compiling Proton-C"
-echo "----------------------------------------"
-cd c/lib/qpid-proton/build
-cmake ..
-make clean qpid-proton
-cd ../../../..
 
 
 # Creating build directory
