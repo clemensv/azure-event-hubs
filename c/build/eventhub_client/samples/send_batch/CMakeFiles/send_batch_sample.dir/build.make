@@ -118,7 +118,7 @@ eventhub_client/samples/send_batch/send_batch_sample: eventhub_client/samples/se
 eventhub_client/samples/send_batch/send_batch_sample: eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/build.make
 eventhub_client/samples/send_batch/send_batch_sample: common/libeventhub_common.a
 eventhub_client/samples/send_batch/send_batch_sample: eventhub_client/libeventhub_client.a
-eventhub_client/samples/send_batch/send_batch_sample: ../lib/qpid-proton/lib64/libqpid-proton.dylib
+eventhub_client/samples/send_batch/send_batch_sample: /usr/local/lib64/libqpid-proton.dylib
 eventhub_client/samples/send_batch/send_batch_sample: eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable send_batch_sample"
 	cd /Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/samples/send_batch && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/send_batch_sample.dir/link.txt --verbose=$(VERBOSE)

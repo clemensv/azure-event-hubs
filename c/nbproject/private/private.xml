@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <code-assistance-data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <code-model-enabled>true</code-model-enabled>
+    </code-assistance-data>
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>0</activeConfTypeElem>
+        <activeConfIndexElem>0</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test/CMakeLists.txt</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/cmake/build_qpid_proton_dependency.cmake</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/send.c</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/eventhubclient_ll.c</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/common/adapters/threadapi_pthreads.c</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/cmake/FindQpid_Proton.cmake</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/CMakeLists.txt</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/eventhubclient.c</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/cmake/dependencies.cmake</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/CMakeLists.txt</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/testtools/CMakeLists.txt</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/CMakeLists.txt</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/common/src/doublylinkedlist.c</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send_batch/CMakeLists.txt</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/sendasync/CMakeLists.txt</file>
+            <file>file:/Users/clemensv/Github/azure-event-hubs/c/common/adapters/lock_pthreads.c</file>
+        </group>
+    </open-files>
+</project-private>

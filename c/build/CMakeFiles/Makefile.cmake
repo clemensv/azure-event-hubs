@@ -11,7 +11,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.3.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.3.1/CMakeSystem.cmake"
   "../cmake/FindQPID_PROTON.cmake"
-  "../cmake/build_qpid_proton_dependency.cmake"
   "../cmake/compiler_options.cmake"
   "../cmake/dependencies.cmake"
   "../cmake/version.cmake"
@@ -21,7 +20,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../eventhub_client/samples/send/CMakeLists.txt"
   "../eventhub_client/samples/send_batch/CMakeLists.txt"
   "../eventhub_client/samples/sendasync/CMakeLists.txt"
-  "../external/qpid-proton/tmp/qpid_proton-cfgcmd.txt.in"
   "../testtools/CMakeLists.txt"
   "../testtools/eventhub_test/CMakeLists.txt"
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/CMakeCInformation.cmake"
@@ -37,7 +35,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/Compiler/Clang.cmake"
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/Compiler/GNU.cmake"
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/ExternalProject.cmake"
-  "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/FindGit.cmake"
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/FindPackageMessage.cmake"
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/FindThreads.cmake"
@@ -47,7 +44,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/Platform/Darwin-Initialize.cmake"
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/Platform/Darwin.cmake"
   "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/Platform/UnixPaths.cmake"
-  "/usr/local/Cellar/cmake/3.3.1/share/cmake/Modules/RepositoryInfo.txt.in"
   )
 
 # The corresponding makefile is:
@@ -58,8 +54,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "../external/qpid-proton/src/qpid_proton-stamp/qpid_proton-gitinfo.txt"
-  "../external/qpid-proton/tmp/qpid_proton-cfgcmd.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "common/CMakeFiles/CMakeDirectoryInformation.cmake"
   "eventhub_client/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -74,7 +68,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/core.dir/DependInfo.cmake"
-  "CMakeFiles/qpid_proton.dir/DependInfo.cmake"
   "common/CMakeFiles/eventhub_common.dir/DependInfo.cmake"
   "eventhub_client/CMakeFiles/eventhub_client.dir/DependInfo.cmake"
   "eventhub_client/samples/CMakeFiles/samples.dir/DependInfo.cmake"

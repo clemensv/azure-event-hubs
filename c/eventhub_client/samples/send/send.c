@@ -19,14 +19,18 @@ IN THE SOFTWARE.
 
 #include <stdio.h>
 
-#include "eventhubclient.h"
-#include "eventdata.h"
+#include <eventhubclient.h>
+#include <eventdata.h>
 #include "send.h"
-#include "threadapi.h"
-#include "crt_abstractions.h"
+#include <threadapi.h>
+#include <crt_abstractions.h>
 
-static const char* connectionString = "Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=[key name];SharedAccessKey=[key value]";
-static const char* eventHubPath = "[event hub name]";
+//static const char* connectionString = "Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=[key name];SharedAccessKey=[key value]";
+//static const char* eventHubPath = "[event hub name]";
+static const char* connectionString = "Endpoint=sb://clemensveu.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=bIeXN/RZeANw59xt39ZGyOScYxqRe73NIT4ZxrDooj4=";
+static const char* eventHubPath = "iotev1";
+
+
 
 static bool g_bSendProperties = false;
 static bool g_bSendPartitionKey = false;

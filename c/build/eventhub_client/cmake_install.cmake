@@ -27,6 +27,23 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/libeventhub_client.a")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libeventhub_client.a" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libeventhub_client.a")
+    execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libeventhub_client.a")
+  endif()
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/eventhubs" TYPE FILE FILES
+    "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc/eventdata.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc/eventhubclient.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc/eventhubclient_ll.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc/version.h"
+    )
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/samples/cmake_install.cmake")

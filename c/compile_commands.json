@@ -1,0 +1,132 @@
+[
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/adapters/httpapi_curl.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/adapters/httpapi_curl.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/adapters/httpapi_curl.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/adapters/lock_pthreads.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/adapters/lock_pthreads.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/adapters/lock_pthreads.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/adapters/threadapi_pthreads.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/adapters/threadapi_pthreads.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/adapters/threadapi_pthreads.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/base64.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/base64.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/base64.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/buffer.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/buffer.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/buffer.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/crt_abstractions.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/crt_abstractions.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/crt_abstractions.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/doublylinkedlist.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/doublylinkedlist.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/doublylinkedlist.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/gballoc.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/gballoc.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/gballoc.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/httpheaders.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/httpheaders.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/httpheaders.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/map.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/map.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/map.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/string_tokenizer.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/string_tokenizer.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/string_tokenizer.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/strings.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/strings.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/strings.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/urlencode.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/urlencode.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/urlencode.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/common",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_common.dir/src/vector.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/common/src/vector.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/common/src/vector.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_client.dir/src/eventdata.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/eventdata.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/eventdata.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_client.dir/src/eventhubclient.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/eventhubclient.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/eventhubclient.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_client.dir/src/eventhubclient_ll.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/eventhubclient_ll.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/eventhubclient_ll.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_client.dir/src/version.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/version.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/src/version.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/send_sample.dir/main.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/main.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/main.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/send_sample.dir/send.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/send.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/send.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send_batch",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/send_batch_sample.dir/main.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send_batch/main.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send_batch/main.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send_batch",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/send_batch_sample.dir/send_batch.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send_batch/send_batch.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send_batch/send_batch.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/sendasync",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/send_async_sample.dir/main.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/sendasync/main.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/sendasync/main.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/sendasync",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/common/inc -I/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/send_async_sample.dir/sendasync.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/sendasync/sendasync.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/sendasync/sendasync.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test/inc -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_test.dir/src/eventhub_account.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test/src/eventhub_account.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test/src/eventhub_account.c"
+},
+{
+  "directory": "/Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test",
+  "command": "/usr/bin/gcc   -g3 -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -I/Users/clemensv/Github/azure-event-hubs/c -I/usr/local/include -I/Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test/inc -I/Users/clemensv/Github/azure-event-hubs/c/common/inc    -msse4.2 -Weffc++ -pedantic -Wall -Wextra -Wcast-align -w -o CMakeFiles/eventhub_test.dir/src/eventhub_testclient.c.o   -c /Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test/src/eventhub_testclient.c",
+  "file": "/Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test/src/eventhub_testclient.c"
+}
+]

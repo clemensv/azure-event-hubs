@@ -118,7 +118,7 @@ eventhub_client/samples/sendasync/send_async_sample: eventhub_client/samples/sen
 eventhub_client/samples/sendasync/send_async_sample: eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/build.make
 eventhub_client/samples/sendasync/send_async_sample: common/libeventhub_common.a
 eventhub_client/samples/sendasync/send_async_sample: eventhub_client/libeventhub_client.a
-eventhub_client/samples/sendasync/send_async_sample: ../lib/qpid-proton/lib64/libqpid-proton.dylib
+eventhub_client/samples/sendasync/send_async_sample: /usr/local/lib64/libqpid-proton.dylib
 eventhub_client/samples/sendasync/send_async_sample: eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable send_async_sample"
 	cd /Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/samples/sendasync && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/send_async_sample.dir/link.txt --verbose=$(VERBOSE)

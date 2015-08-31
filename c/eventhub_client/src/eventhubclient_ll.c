@@ -15,7 +15,7 @@ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONIN
 THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
 CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
-*/
+ */
 
 #include <stdlib.h>
 #ifdef _CRTDBG_MAP_ALLOC
@@ -81,7 +81,7 @@ typedef struct EVENTHUBCLIENT_LL_STRUCT_TAG
 } EVENTHUBCLIENT_LL_STRUCT;
 
 static const char ENDPOINT_SUBSTRING[] = "Endpoint=sb://";
-static const size_t ENDPOINT_SUBSTRING_LENGTH = sizeof(ENDPOINT_SUBSTRING) / sizeof(ENDPOINT_SUBSTRING[0]) - 1;
+static const size_t ENDPOINT_SUBSTRING_LENGTH = sizeof (ENDPOINT_SUBSTRING) / sizeof (ENDPOINT_SUBSTRING[0]) - 1;
 static const char SERVICEBUS_PATH_STRING[] = "servicebus.windows.net";
 static const char SERVICEBUS_PATH_STRING_ALTERNATIVE[] = "servicebus.windows.net/";
 
@@ -111,7 +111,7 @@ static int SetMessageBatchProperty(EVENTDATA_HANDLE eventDataHandle, char** prot
     else if (propertyCount > 0)
     {
         pn_data_t* propertyData;
-        if ( (propertyData = pn_data(0) ) == NULL)
+        if ((propertyData = pn_data(0)) == NULL)
         {
             LogError("Failure pn_data.\r\n");
             result = __LINE__;
@@ -131,8 +131,8 @@ static int SetMessageBatchProperty(EVENTDATA_HANDLE eventDataHandle, char** prot
             *propertyLen = PROTON_PROPERTY_HEADER_SIZE;
             for (index = 0; index < propertyCount; index++)
             {
-                *propertyLen += strlen(keys[index])+2;
-                *propertyLen += strlen(values[index])+2;
+                *propertyLen += strlen(keys[index]) + 2;
+                *propertyLen += strlen(values[index]) + 2;
 
                 if (pn_data_put_symbol(propertyData, pn_bytes(strlen(keys[index]), keys[index])) != 0)
                 {
@@ -141,11 +141,11 @@ static int SetMessageBatchProperty(EVENTDATA_HANDLE eventDataHandle, char** prot
                 }
                 else if (pn_data_put_string(propertyData, pn_bytes(strlen(values[index]), values[index])) != 0)
                 {
-                        LogError("Failure pn_data_put_string.\r\n");
+                    LogError("Failure pn_data_put_string.\r\n");
                     break;
                 }
             }
-            
+
             if (index != propertyCount)
             {
                 result = __LINE__;
@@ -169,9 +169,9 @@ static int SetMessageBatchProperty(EVENTDATA_HANDLE eventDataHandle, char** prot
                     tmpValue[0] = 0x00; // this is a constructor of type "/ %x00 descriptor constructor" - see AMQP specs fig 1.3
                     tmpValue[1] = 0x53; // this is a "fixed one" type, see AMQP specs fig 1.3
                     tmpValue[2] = 0x74; // this is "Data" see AMQP specs 3.2.6*/
-                    insertPos = tmpValue+3;
+                    insertPos = tmpValue + 3;
 
-                    ssize_t sizeOfProperty = pn_data_encode(propertyData, insertPos, *propertyLen-3);
+                    ssize_t sizeOfProperty = pn_data_encode(propertyData, insertPos, *propertyLen - 3);
                     if (sizeOfProperty == 0)
                     {
                         LogError("Failure pn_data_encode.\r\n");
@@ -240,7 +240,7 @@ static bool amqpStopMessenger(pn_messenger_t* messenger)
 {
     bool succeeded;
     int result;
-    
+
     result = pn_messenger_stop(messenger);
     if (result == 0)
     {
@@ -267,6 +267,7 @@ static bool amqpStopMessenger(pn_messenger_t* messenger)
     }
     return succeeded;
 }
+
 EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char* connectionString, const char* eventHubPath)
 {
     EVENTHUBCLIENT_LL_STRUCT* ehLLStruct = NULL;
@@ -287,7 +288,7 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
     {
         LogError("Invalid Argument. result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_ARG));
     }
-    /* Codes_SRS_EVENTHUBCLIENT_LL_03_018: [EventHubClient_LL_CreateFromConnectionString shall return NULL if the connectionString format is invalid.] */
+        /* Codes_SRS_EVENTHUBCLIENT_LL_03_018: [EventHubClient_LL_CreateFromConnectionString shall return NULL if the connectionString format is invalid.] */
     else if (strncmp(connectionString, ENDPOINT_SUBSTRING, ENDPOINT_SUBSTRING_LENGTH) != 0) /* Making sure the connection String Starts with Endpoint=sb:// */
     {
         LogError("Invalid Connection String. result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_CONNECTION_STRING));
@@ -304,17 +305,17 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
     {
         LogError("Error creating Token String.\r\n");
     }
-    /* Codes_SRS_EVENTHUBCLIENT_LL_03_017: [EventHubClient_ll expects a service bus connection string in one of the following formats:
-    Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=[key name];SharedAccessKey=[key value]
-    Endpoint=sb://[namespace].servicebus.windows.net;SharedAccessKeyName=[key name];SharedAccessKey=[key value] ]*/
-    /* Codes_SRS_EVENTHUBCLIENT_LL_03_018: [EventHubClient_LL_CreateFromConnectionString shall return NULL if the connectionString format is invalid.] */
-    /* Codes_SRS_EVENTHUBCLIENT_LL_03_004: [For all other errors, EventHubClient_LL_CreateFromConnectionString shall return NULL.] */
+        /* Codes_SRS_EVENTHUBCLIENT_LL_03_017: [EventHubClient_ll expects a service bus connection string in one of the following formats:
+        Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=[key name];SharedAccessKey=[key value]
+        Endpoint=sb://[namespace].servicebus.windows.net;SharedAccessKeyName=[key name];SharedAccessKey=[key value] ]*/
+        /* Codes_SRS_EVENTHUBCLIENT_LL_03_018: [EventHubClient_LL_CreateFromConnectionString shall return NULL if the connectionString format is invalid.] */
+        /* Codes_SRS_EVENTHUBCLIENT_LL_03_004: [For all other errors, EventHubClient_LL_CreateFromConnectionString shall return NULL.] */
     else if (STRING_TOKENIZER_get_next_token(tokenizer, tokenString, ".") != 0) /*looking for the servicebus namespace */
     {
         LogError("Couldn't find namespace name.result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_CONNECTION_STRING));
     }
-    /* Codes_SRS_EVENTHUBCLIENT_LL_03_002: [EventHubClient_LL_CreateFromConnectionString shall allocate the internal structures required by this module.] */
-    else if ((ehLLStruct = malloc(sizeof(EVENTHUBCLIENT_LL_STRUCT))) == NULL)
+        /* Codes_SRS_EVENTHUBCLIENT_LL_03_002: [EventHubClient_LL_CreateFromConnectionString shall allocate the internal structures required by this module.] */
+    else if ((ehLLStruct = malloc(sizeof (EVENTHUBCLIENT_LL_STRUCT))) == NULL)
     {
         LogError("Memory Allocation Failed for ehLLStruct.\r\n");
     }
@@ -334,25 +335,25 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_ERROR));
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_03_020: [EventHubClient_LL_CreateFromConnectionString shall ensure that the keyname, keyvalue, namespace and eventhubpath are all URL encoded.] */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_03_020: [EventHubClient_LL_CreateFromConnectionString shall ensure that the keyname, keyvalue, namespace and eventhubpath are all URL encoded.] */
         else if ((ehLLStruct->namespace = URL_Encode(namespaceStringHandle)) == NULL)
         {
             /* Codes_SRS_EVENTHUBCLIENT_LL_03_021: [EventHubClient_LL_CreateFromConnectionString shall return EVENTHUBCLIENT_URL_ENCODING_FAILURE if any failure is encountered during the URL encoding.] */
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_URL_ENCODING_FAILURE));
         }
-        else if (STRING_TOKENIZER_get_next_token(tokenizer, tokenString, ";") != 0)  /* looking for "servicebus.windows.net" or "servicebus.windows.net/" */
+        else if (STRING_TOKENIZER_get_next_token(tokenizer, tokenString, ";") != 0) /* looking for "servicebus.windows.net" or "servicebus.windows.net/" */
         {
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_CONNECTION_STRING));
         }
         else if ((strcmp(STRING_c_str(tokenString), SERVICEBUS_PATH_STRING_ALTERNATIVE) != 0) &&
-            (strcmp(STRING_c_str(tokenString), SERVICEBUS_PATH_STRING) != 0)) /* Check the  different patterns of Connection String we support.*/
+                 (strcmp(STRING_c_str(tokenString), SERVICEBUS_PATH_STRING) != 0)) /* Check the  different patterns of Connection String we support.*/
         {
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_CONNECTION_STRING));
         }
-        else if (STRING_TOKENIZER_get_next_token(tokenizer, tokenString, "=") != 0)  /* looking for the "SharedAccessKeyName" */
+        else if (STRING_TOKENIZER_get_next_token(tokenizer, tokenString, "=") != 0) /* looking for the "SharedAccessKeyName" */
         {
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_CONNECTION_STRING));
@@ -372,14 +373,14 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_ERROR));
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_03_020: [EventHubClient_LL_CreateFromConnectionString shall ensure that the keyname, keyvalue, namespace and eventhubpath are all URL encoded.] */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_03_020: [EventHubClient_LL_CreateFromConnectionString shall ensure that the keyname, keyvalue, namespace and eventhubpath are all URL encoded.] */
         else if ((ehLLStruct->keyName = URL_Encode(keyNameStringHandle)) == NULL)
         {
             /* Codes_SRS_EVENTHUBCLIENT_LL_03_021: [EventHubClient_LL_CreateFromConnectionString shall return EVENTHUBCLIENT_URL_ENCODING_FAILURE if any failure is encountered during the URL encoding.] */
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_URL_ENCODING_FAILURE));
         }
-        else if (STRING_TOKENIZER_get_next_token(tokenizer, tokenString, "=") != 0)   /* looking for the "SharedAccessKey" */
+        else if (STRING_TOKENIZER_get_next_token(tokenizer, tokenString, "=") != 0) /* looking for the "SharedAccessKey" */
         {
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_CONNECTION_STRING));
@@ -399,8 +400,9 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_ERROR));
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_03_020: [EventHubClient_LL_CreateFromConnectionString shall ensure that the keyname, keyvalue, namespace and eventhubpath are all URL encoded.] */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_03_020: [EventHubClient_LL_CreateFromConnectionString shall ensure that the keyname, keyvalue, namespace and eventhubpath are all URL encoded.] */
         else if ((ehLLStruct->keyValue = URL_Encode(keyValueStringHandle)) == NULL)
+            //else if ((ehLLStruct->keyValue = STRING_clone(keyValueStringHandle)) == NULL)
         {
             /* Codes_SRS_EVENTHUBCLIENT_LL_03_021: [EventHubClient_LL_CreateFromConnectionString shall return EVENTHUBCLIENT_URL_ENCODING_FAILURE if any failure is encountered during the URL encoding.] */
             clearehLLStruct = true;
@@ -411,21 +413,21 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_ERROR));
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_03_020: [EventHubClient_LL_CreateFromConnectionString shall ensure that the keyname, keyvalue, namespace and eventhubpath are all URL encoded.] */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_03_020: [EventHubClient_LL_CreateFromConnectionString shall ensure that the keyname, keyvalue, namespace and eventhubpath are all URL encoded.] */
         else if ((ehLLStruct->eventHubpath = URL_Encode(eventHubPathStringHandle)) == NULL)
         {
             /* Codes_SRS_EVENTHUBCLIENT_LL_03_021: [EventHubClient_LL_CreateFromConnectionString shall return EVENTHUBCLIENT_URL_ENCODING_FAILURE if any failure is encountered during the URL encoding.] */
             clearehLLStruct = true;
             LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_URL_ENCODING_FAILURE));
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_03_029: [EventHubClient_ CreateFromConnectionString shall create a proton messenger via a call to pn_messenger.] */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_03_029: [EventHubClient_ CreateFromConnectionString shall create a proton messenger via a call to pn_messenger.] */
         else if ((ehLLStruct->messenger = pn_messenger(NULL)) == NULL)
         {
             /* Codes_SRS_EVENTHUBCLIENT_LL_03_039: [EventHubClient_ CreateFromConnectionString shall return EVENTHUBCLIENT_ERROR if it fails to create a proton messenger.] */
             clearehLLStruct = true;
             LogError("pn_messenger failed.\r\n");
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_04_001: [EventHubClient_LL_CreateFromConnectionString shall call pn_messenger_set_outgoing_window so it can get the status of the message sent] */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_04_001: [EventHubClient_LL_CreateFromConnectionString shall call pn_messenger_set_outgoing_window so it can get the status of the message sent] */
         else if (pn_messenger_set_outgoing_window(ehLLStruct->messenger, OUTGOING_WINDOW_SIZE) != 0)
         {
             pn_messenger_free(ehLLStruct->messenger);
@@ -433,7 +435,7 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             clearehLLStruct = true;
             LogError("pn_messenger_set_outgoing_window failed.\r\n");
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_04_010: [EventHubClient_LL_CreateFromConnectionString shall setup the global messenger to be blocking via a call to pn_messenger_set_blocking.] */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_04_010: [EventHubClient_LL_CreateFromConnectionString shall setup the global messenger to be blocking via a call to pn_messenger_set_blocking.] */
         else if (pn_messenger_set_blocking(ehLLStruct->messenger, false) != 0)
         {
             /* Codes_SRS_EVENTHUBCLIENT_LL_03_033: [EventHubClient_LL_Send shall return EVENTHUBCLIENT_ERROR for any error encountered while invoking messenger functionalities.] */
@@ -441,14 +443,14 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             clearehLLStruct = true;
             LogError("pn_messenger_set_blocking failed.\r\n");
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_04_009: [EventHubClient_LL_CreateFromConnectionString shall specify a timeout value of 10 seconds to the proton messenger via a call to pn_messenger_set_timeout.]  */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_04_009: [EventHubClient_LL_CreateFromConnectionString shall specify a timeout value of 10 seconds to the proton messenger via a call to pn_messenger_set_timeout.]  */
         else if (pn_messenger_set_timeout(ehLLStruct->messenger, MESSENGER_TIMEOUT_IN_MILLISECONDS) != 0)
         {
             clearehLLStruct = true;
             pn_messenger_free(ehLLStruct->messenger);
             LogError("pn_messenger_set_timeout failed.\r\n");
         }
-        /* Codes_SRS_EVENTHUBCLIENT_LL_03_030: [EventHubClient_LL_CreateFromConnectionString shall then start the messenger invoking pn_messenger_start.] */
+            /* Codes_SRS_EVENTHUBCLIENT_LL_03_030: [EventHubClient_LL_CreateFromConnectionString shall then start the messenger invoking pn_messenger_start.] */
         else if (pn_messenger_start(ehLLStruct->messenger) != 0)
         {
             /* Codes_SRS_EVENTHUBCLIENT_LL_04_002: [If EventHubClient_LL_CreateFromConnectionString fail is shall return  NULL;]  */
@@ -463,12 +465,12 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             LogError("Failed trying to build the AMQP Address String.\r\n");
         }
         else if (STRING_concat_with_STRING(ehLLStruct->amqpAddressStringHandle, ehLLStruct->keyName) != 0 ||
-            STRING_concat(ehLLStruct->amqpAddressStringHandle, ":") != 0 ||
-            STRING_concat_with_STRING(ehLLStruct->amqpAddressStringHandle, ehLLStruct->keyValue) != 0 ||
-            STRING_concat(ehLLStruct->amqpAddressStringHandle, "@") != 0 ||
-            STRING_concat_with_STRING(ehLLStruct->amqpAddressStringHandle, ehLLStruct->namespace) != 0 ||
-            STRING_concat(ehLLStruct->amqpAddressStringHandle, ".servicebus.windows.net/") != 0 ||
-            STRING_concat_with_STRING(ehLLStruct->amqpAddressStringHandle, ehLLStruct->eventHubpath))
+                 STRING_concat(ehLLStruct->amqpAddressStringHandle, ":") != 0 ||
+                 STRING_concat_with_STRING(ehLLStruct->amqpAddressStringHandle, ehLLStruct->keyValue) != 0 ||
+                 STRING_concat(ehLLStruct->amqpAddressStringHandle, "@") != 0 ||
+                 STRING_concat_with_STRING(ehLLStruct->amqpAddressStringHandle, ehLLStruct->namespace) != 0 ||
+                 STRING_concat(ehLLStruct->amqpAddressStringHandle, ".servicebus.windows.net/") != 0 ||
+                 STRING_concat_with_STRING(ehLLStruct->amqpAddressStringHandle, ehLLStruct->eventHubpath))
         {
             clearehLLStruct = true;
             pn_messenger_free(ehLLStruct->messenger);
@@ -500,7 +502,7 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
     STRING_delete(tokenString);
     STRING_TOKENIZER_destroy(tokenizer);
 
-    return ((EVENTHUBCLIENT_LL_HANDLE)ehLLStruct);
+    return ((EVENTHUBCLIENT_LL_HANDLE) ehLLStruct);
 }
 
 static int ValidateEventDataList(EVENTDATA_HANDLE *eventDataList, size_t count)
@@ -514,7 +516,7 @@ static int ValidateEventDataList(EVENTDATA_HANDLE *eventDataList, size_t count)
         if (eventDataList[index] == NULL)
         {
             result = __LINE__;
-            LogError("handle index %d NULL result = %s\r\n", (int)index, ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_ARG));
+            LogError("handle index %d NULL result = %s\r\n", (int) index, ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_INVALID_ARG));
             break;
         }
         else
@@ -526,10 +528,10 @@ static int ValidateEventDataList(EVENTDATA_HANDLE *eventDataList, size_t count)
             }
             else
             {
-                if ( (currPartKey == NULL && partitionKey != NULL) || (currPartKey != NULL && partitionKey == NULL) )
+                if ((currPartKey == NULL && partitionKey != NULL) || (currPartKey != NULL && partitionKey == NULL))
                 {
                     result = __LINE__;
-                    LogError("All event data in a SendBatch operation must have the same partition key result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_PARTITION_KEY_MISMATCH) );
+                    LogError("All event data in a SendBatch operation must have the same partition key result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_PARTITION_KEY_MISMATCH));
                     break;
                 }
                 else
@@ -559,7 +561,8 @@ static EVENTHUBCLIENT_RESULT GenerateMessagePayload(EVENTHUBCLIENT_LL_STRUCT* ev
     //Fist Clear the current message;
     pn_message_clear(eventHubClientLLStruct->message);
 
-    if (pn_message_set_address(eventHubClientLLStruct->message, STRING_c_str(eventHubClientLLStruct->amqpAddressStringHandle)) != 0)
+    char * amqpAddress = STRING_c_str(eventHubClientLLStruct->amqpAddressStringHandle);
+    if (pn_message_set_address(eventHubClientLLStruct->message, amqpAddress) != 0)
     {
         result = EVENTHUBCLIENT_ERROR;
         LogError("pn_message_set_address failed.\r\n");
@@ -569,7 +572,7 @@ static EVENTHUBCLIENT_RESULT GenerateMessagePayload(EVENTHUBCLIENT_LL_STRUCT* ev
         result = EVENTHUBCLIENT_ERROR;
         LogError("pn_message_set_inferred failed.\r\n");
     }
-    // Use the first EventData Item in the list since by spec they all have to be the same
+        // Use the first EventData Item in the list since by spec they all have to be the same
     else if (SetMessagePartitionKey(eventHubClientLLStruct->message, eventDataList[0]) != 0)
     {
         result = EVENTHUBCLIENT_ERROR;
@@ -579,12 +582,35 @@ static EVENTHUBCLIENT_RESULT GenerateMessagePayload(EVENTHUBCLIENT_LL_STRUCT* ev
         result = EVENTHUBCLIENT_ERROR;
         LogError("pn_message_body failed.\r\n");
     }
-    // CVFIX
-    //else if (pn_message_set_format(eventHubClientLLStruct->message, 0x80013700) != 0)
-    //{
-    //    result = EVENTHUBCLIENT_ERROR;
-    //    LogError("pn_message_set_format failed.\r\n");
-    //}
+    else if (count == 1)
+    {
+        unsigned char* data = NULL;
+        size_t dataLength = 0;
+
+        // Get the Properties, may return NULL if not no properties
+        if (EventData_GetData(eventDataList[0], (const unsigned char**) &data, &dataLength) != EVENTDATA_OK)
+        {
+            LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_EVENT_DATA_FAILURE));
+            return EVENTHUBCLIENT_ERROR;
+        }
+        else
+        {
+            pn_bytes_t protonBytes = pn_bytes(dataLength, (const char*) data);
+            pn_data_put_binary(body, protonBytes);
+        }
+
+        if (pn_messenger_put(eventHubClientLLStruct->messenger, eventHubClientLLStruct->message) != 0)
+        {
+            result = EVENTHUBCLIENT_ERROR;
+            LogError("pn_messenger_put failed.\r\n");
+        }
+        else
+        {
+            *tracker = pn_messenger_outgoing_tracker(eventHubClientLLStruct->messenger);
+            result = EVENTHUBCLIENT_OK;
+        }
+
+    }
     else
     {
         int tempResult = 0;
@@ -605,17 +631,17 @@ static EVENTHUBCLIENT_RESULT GenerateMessagePayload(EVENTHUBCLIENT_LL_STRUCT* ev
                 tempResult = EVENTHUBCLIENT_ERROR;
                 break;
             }
-            else if (EventData_GetData(eventDataList[index], (const unsigned char**)&data, &dataLength) != EVENTDATA_OK)
+            else if (EventData_GetData(eventDataList[index], (const unsigned char**) &data, &dataLength) != EVENTDATA_OK)
             {
                 tempResult = EVENTHUBCLIENT_ERROR;
                 free(propValues);
-                LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_EVENT_DATA_FAILURE) );
+                LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_EVENT_DATA_FAILURE));
                 break;
             }
             else
             {
                 // Check the total size to make sure we don't go over proton's limits
-                totalSize += propertyLength+dataLength+AMQP_PACK_OVERHEAD;
+                totalSize += propertyLength + dataLength + AMQP_PACK_OVERHEAD;
                 if (totalSize > AMQP_MAX_MESSAGE_SIZE)
                 {
                     tempResult = EVENTHUBCLIENT_DATA_SIZE_EXCEEDED;
@@ -623,7 +649,7 @@ static EVENTHUBCLIENT_RESULT GenerateMessagePayload(EVENTHUBCLIENT_LL_STRUCT* ev
                     LogError("The message (%lu bytes) exceeds the limit currently allowed on the link.\r\n", totalSize);
                     break;
                 }
-                else if ( (innerBinary = pn_data(0) ) == NULL)
+                else if ((innerBinary = pn_data(0)) == NULL)
                 {
                     tempResult = EVENTHUBCLIENT_ERROR;
                     free(propValues);
@@ -632,7 +658,7 @@ static EVENTHUBCLIENT_RESULT GenerateMessagePayload(EVENTHUBCLIENT_LL_STRUCT* ev
                 }
                 else
                 {
-                    pn_bytes_t protonBytes = pn_bytes(dataLength, (const char*)data);
+                    pn_bytes_t protonBytes = pn_bytes(dataLength, (const char*) data);
                     if (pn_data_put_binary(innerBinary, protonBytes) != 0)
                     {
                         tempResult = EVENTHUBCLIENT_ERROR;
@@ -646,7 +672,7 @@ static EVENTHUBCLIENT_RESULT GenerateMessagePayload(EVENTHUBCLIENT_LL_STRUCT* ev
                         /*5 because string = 0xA0 + 1 byte for length or 0xA1 and 4 bytes for length */
                         /*3 because a section is encoded as 0x00, 0x53, 0x75*/
                         char* iterator;
-                        char* out1 = (char*)malloc(dataLength + 5 + 3 + propertyLength);
+                        char* out1 = (char*) malloc(dataLength + 5 + 3 + propertyLength);
                         if (out1 == NULL)
                         {
                             tempResult = EVENTHUBCLIENT_ERROR;
@@ -730,7 +756,7 @@ void EventHubClient_LL_Destroy(EVENTHUBCLIENT_LL_HANDLE eventHubClientLLHandle)
     {
         PDLIST_ENTRY unsend;
         /* Codes_SRS_EVENTHUBCLIENT_LL_03_009: [EventHubClient_LL_Destroy shall terminate the usage of this EventHubClient specified by the eventHubClientLLHandle and cleanup all associated resources.] */
-        EVENTHUBCLIENT_LL_STRUCT* ehLLStruct = (EVENTHUBCLIENT_LL_STRUCT*)eventHubClientLLHandle;
+        EVENTHUBCLIENT_LL_STRUCT* ehLLStruct = (EVENTHUBCLIENT_LL_STRUCT*) eventHubClientLLHandle;
         STRING_delete(ehLLStruct->keyName);
         STRING_delete(ehLLStruct->keyValue);
         STRING_delete(ehLLStruct->namespace);
@@ -754,7 +780,7 @@ void EventHubClient_LL_Destroy(EVENTHUBCLIENT_LL_HANDLE eventHubClientLLHandle)
             free(temp);
         }
 
-        /* Codes_SRS_EVENTHUBCLIENT_LL_03_034: [EventHubClient_LL_Destroy shall then stop the messenger by invoking pn_messenger_stop.] */		
+        /* Codes_SRS_EVENTHUBCLIENT_LL_03_034: [EventHubClient_LL_Destroy shall then stop the messenger by invoking pn_messenger_stop.] */
         if (amqpStopMessenger(ehLLStruct->messenger) != true)
         {
             LogError("Error trying to stop the messenger.\r\n");
@@ -771,7 +797,7 @@ void EventHubClient_LL_Destroy(EVENTHUBCLIENT_LL_HANDLE eventHubClientLLHandle)
 
 EVENTHUBCLIENT_RESULT EventHubClient_LL_SendAsync(EVENTHUBCLIENT_LL_HANDLE eventHubClientLLHandle, EVENTDATA_HANDLE eventDataHandle, EVENTHUB_CLIENT_SENDASYNC_CONFIRMATION_CALLBACK sendAsyncConfirmationCallback, void* userContextCallback)
 {
-   EVENTHUBCLIENT_RESULT result;
+    EVENTHUBCLIENT_RESULT result;
 
     /* Codes_SRS_EVENTHUBCLIENT_LL_04_011: [EventHubClient_LL_SendAsync shall fail and return EVENTHUBCLIENT_INVALID_ARG if parameter eventHubClientLLHandle or eventDataHandle is NULL.] */
     /* Codes_SRS_EVENTHUBCLIENT_LL_04_012: [EventHubClient_LL_SendAsync shall fail and return EVENTHUBCLIENT_INVALID_ARG if parameter telemetryConfirmationCallBack is NULL and userContextCallBack is not NULL.] */
@@ -782,7 +808,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendAsync(EVENTHUBCLIENT_LL_HANDLE event
     }
     else
     {
-        EVENTHUB_EVENT_LIST *newEntry = (EVENTHUB_EVENT_LIST*)malloc(sizeof(EVENTHUB_EVENT_LIST));
+        EVENTHUB_EVENT_LIST *newEntry = (EVENTHUB_EVENT_LIST*) malloc(sizeof (EVENTHUB_EVENT_LIST));
         if (newEntry == NULL)
         {
             result = EVENTHUBCLIENT_ERROR;
@@ -792,7 +818,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendAsync(EVENTHUBCLIENT_LL_HANDLE event
         {
             newEntry->currentStatus = WAITING_TO_BE_SENT;
             newEntry->dataCount = 1;
-            newEntry->eventDataList = malloc(sizeof(EVENTDATA_HANDLE) );
+            newEntry->eventDataList = malloc(sizeof (EVENTDATA_HANDLE));
             if (newEntry->eventDataList == NULL)
             {
                 result = EVENTHUBCLIENT_ERROR;
@@ -812,7 +838,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendAsync(EVENTHUBCLIENT_LL_HANDLE event
                 }
                 else
                 {
-                    EVENTHUBCLIENT_LL_STRUCT* ehClientLLData = (EVENTHUBCLIENT_LL_STRUCT*)eventHubClientLLHandle;
+                    EVENTHUBCLIENT_LL_STRUCT* ehClientLLData = (EVENTHUBCLIENT_LL_STRUCT*) eventHubClientLLHandle;
                     /* Codes_SRS_EVENTHUBCLIENT_LL_04_013: [EventHubClient_LL_SendAsync shall add the DLIST outgoingEvents a new record cloning the information from eventDataHandle, telemetryConfirmationCallback and userContextCallBack.] */
                     newEntry->callback = sendAsyncConfirmationCallback;
                     newEntry->context = userContextCallback;
@@ -847,7 +873,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendBatchAsync(EVENTHUBCLIENT_LL_HANDLE 
         }
         else
         {
-            EVENTHUB_EVENT_LIST *newEntry = (EVENTHUB_EVENT_LIST*)malloc(sizeof(EVENTHUB_EVENT_LIST));
+            EVENTHUB_EVENT_LIST *newEntry = (EVENTHUB_EVENT_LIST*) malloc(sizeof (EVENTHUB_EVENT_LIST));
             if (newEntry == NULL)
             {
                 result = EVENTHUBCLIENT_ERROR;
@@ -857,7 +883,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendBatchAsync(EVENTHUBCLIENT_LL_HANDLE 
             {
                 newEntry->currentStatus = WAITING_TO_BE_SENT;
                 newEntry->dataCount = count;
-                newEntry->eventDataList = malloc(sizeof(EVENTDATA_HANDLE)*count);
+                newEntry->eventDataList = malloc(sizeof (EVENTDATA_HANDLE) * count);
                 if (newEntry->eventDataList == NULL)
                 {
                     free(newEntry);
@@ -869,7 +895,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendBatchAsync(EVENTHUBCLIENT_LL_HANDLE 
                     /* Codes_SRS_EVENTHUBCLIENT_LL_07_014: [EventHubClient_LL_SendBatchAsync shall clone each item in the eventDataList and by calling EVENTDATA_Clone.] */
                     for (index = 0; index < newEntry->dataCount; index++)
                     {
-                        if ( (newEntry->eventDataList[index] = EventData_Clone(eventDataList[index])) == NULL)
+                        if ((newEntry->eventDataList[index] = EventData_Clone(eventDataList[index])) == NULL)
                         {
                             break;
                         }
@@ -889,7 +915,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendBatchAsync(EVENTHUBCLIENT_LL_HANDLE 
                     }
                     else
                     {
-                        EVENTHUBCLIENT_LL_STRUCT* ehClientLLData = (EVENTHUBCLIENT_LL_STRUCT*)eventHubClientLLHandle;
+                        EVENTHUBCLIENT_LL_STRUCT* ehClientLLData = (EVENTHUBCLIENT_LL_STRUCT*) eventHubClientLLHandle;
                         newEntry->callback = sendAsyncConfirmationCallback;
                         newEntry->context = userContextCallback;
                         DList_InsertTailList(&(ehClientLLData->outgoingEvents), &(newEntry->entry));
@@ -905,7 +931,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendBatchAsync(EVENTHUBCLIENT_LL_HANDLE 
 
 void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
 {
-    EVENTHUBCLIENT_LL_STRUCT* ehStruct = (EVENTHUBCLIENT_LL_STRUCT*)eventHubClient_LL_Handle;
+    EVENTHUBCLIENT_LL_STRUCT* ehStruct = (EVENTHUBCLIENT_LL_STRUCT*) eventHubClient_LL_Handle;
     /* Codes_SRS_EVENTHUBCLIENT_LL_04_018: [if parameter eventHubClientLLHandle is NULL  EventHubClient_LL_DoWork shall immediately return.]   */
     if (ehStruct != NULL)
     {
@@ -950,7 +976,7 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
                         currentWork->callback(confirmResult, currentWork->context);
                     }
                     /* Codes_SRS_EVENTHUBCLIENT_LL_04_026: [EventHubClient_LL_DoWork shall free the tracker before removing the event from the list by calling pn_messenger_settle] */
-                    if ( (settleReturnCode = pn_messenger_settle(ehStruct->messenger, currentWork->tracker, 0)) != 0)
+                    if ((settleReturnCode = pn_messenger_settle(ehStruct->messenger, currentWork->tracker, 0)) != 0)
                     {
                         LogError("pn_messenger_settle failed. Error Code: %d\r\n", settleReturnCode);
                     }
@@ -986,7 +1012,7 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
                     /* Codes_SRS_EVENTHUBCLIENT_LL_07_016: [If the total data size of the message exceeds the AMQP_MAX_MESSAGE_SIZE, then the message shall fail and the callback will be called with EVENTHUBCLIENT_CONFIRMATION_EXCEED_MAX_SIZE.] */
                     if (currentWork->callback != NULL)
                     {
-                        currentWork->callback( (payloadResult == EVENTHUBCLIENT_ERROR) ? EVENTHUBCLIENT_CONFIRMATION_ERROR : EVENTHUBCLIENT_CONFIRMATION_EXCEED_MAX_SIZE, currentWork->context);
+                        currentWork->callback((payloadResult == EVENTHUBCLIENT_ERROR) ? EVENTHUBCLIENT_CONFIRMATION_ERROR : EVENTHUBCLIENT_CONFIRMATION_EXCEED_MAX_SIZE, currentWork->context);
                     }
 
                     DList_RemoveEntryList(currentListEntry);
@@ -1013,7 +1039,7 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
         if (ehStruct->currentNumberOfMessageWaitingForAck > 0)
         {
             int tempReturnCode = pn_messenger_send(ehStruct->messenger, ALL_MESSAGES_IN_OUTGOING_QUEUE);
-            if (tempReturnCode != PN_INPROGRESS && tempReturnCode != 0 )
+            if (tempReturnCode != PN_INPROGRESS && tempReturnCode != 0)
             {
                 LogError("pn_messenger_send failed with Error Code: %d.\r\n", tempReturnCode);
             }

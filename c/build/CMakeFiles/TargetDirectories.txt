@@ -6,4 +6,3 @@
 /Users/clemensv/Github/azure-event-hubs/c/build/common/CMakeFiles/eventhub_common.dir
 /Users/clemensv/Github/azure-event-hubs/c/build/eventhub_client/samples/CMakeFiles/samples.dir
 /Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles/core.dir
-/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles/qpid_proton.dir

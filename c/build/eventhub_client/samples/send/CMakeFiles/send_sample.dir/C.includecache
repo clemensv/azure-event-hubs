@@ -90,15 +90,15 @@ send.h
 stdio.h
 -
 eventhubclient.h
-/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/eventhubclient.h
+-
 eventdata.h
-/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/eventdata.h
+-
 send.h
 /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/send.h
 threadapi.h
-/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/threadapi.h
+-
 crt_abstractions.h
-/Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/crt_abstractions.h
+-
 
 /Users/clemensv/Github/azure-event-hubs/c/eventhub_client/samples/send/send.h
 

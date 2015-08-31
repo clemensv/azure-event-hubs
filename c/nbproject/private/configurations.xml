@@ -1,0 +1,1404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="build">
+        <df name="CMakeFiles">
+          <df name="3.3.1">
+            <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
+            </df>
+          </df>
+          <df name="CMakeTmp">
+          </df>
+          <df name="core.dir">
+          </df>
+          <in>feature_tests.c</in>
+        </df>
+        <df name="common">
+          <df name="CMakeFiles">
+            <df name="eventhub_common.dir">
+              <df name="adapters">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="eventhub_client">
+          <df name="CMakeFiles">
+            <df name="eventhub_client.dir">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="samples">
+            <df name="CMakeFiles">
+              <df name="samples.dir">
+              </df>
+            </df>
+            <df name="send">
+              <df name="CMakeFiles">
+                <df name="send_sample.dir">
+                </df>
+              </df>
+            </df>
+            <df name="send_batch">
+              <df name="CMakeFiles">
+                <df name="send_batch_sample.dir">
+                </df>
+              </df>
+            </df>
+            <df name="sendasync">
+              <df name="CMakeFiles">
+                <df name="send_async_sample.dir">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="testtools">
+          <df name="CMakeFiles">
+          </df>
+          <df name="eventhub_test">
+            <df name="CMakeFiles">
+              <df name="eventhub_test.dir">
+                <df name="src">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="build_all">
+        <df name="linux">
+        </df>
+        <df name="windows">
+        </df>
+      </df>
+      <df name="cmake">
+      </df>
+      <df name="CMakeFiles">
+        <df name="3.3.1">
+          <df name="CompilerIdC">
+            <in>CMakeCCompilerId.c</in>
+          </df>
+        </df>
+        <df name="CMakeTmp">
+        </df>
+        <df name="core.dir">
+        </df>
+        <in>feature_tests.c</in>
+      </df>
+      <df name="common">
+        <df name="adapters">
+          <in>httpapi_curl.c</in>
+          <in>httpapi_mbed.cpp</in>
+          <in>httpapi_winhttp.c</in>
+          <in>httpapi_wininet.c</in>
+          <in>httpapi_wininet_ce6.c</in>
+          <in>lock_c11.c</in>
+          <in>lock_pthreads.c</in>
+          <in>lock_rtx_mbed.cpp</in>
+          <in>threadapi_c11.c</in>
+          <in>threadapi_pthreads.c</in>
+          <in>threadapi_rtx_mbed.cpp</in>
+          <in>threadapi_win32.c</in>
+        </df>
+        <df name="build">
+          <df name="linux">
+          </df>
+          <df name="windows">
+          </df>
+        </df>
+        <df name="CMakeFiles">
+          <df name="eventhub_common.dir">
+            <df name="adapters">
+            </df>
+            <df name="src">
+            </df>
+          </df>
+        </df>
+        <df name="doc">
+        </df>
+        <df name="inc">
+          <in>base64.h</in>
+          <in>buffer_.h</in>
+          <in>crt_abstractions.h</in>
+          <in>doublylinkedlist.h</in>
+          <in>gballoc.h</in>
+          <in>httpapi.h</in>
+          <in>httpheaders.h</in>
+          <in>iot_logging.h</in>
+          <in>lock.h</in>
+          <in>macro_utils.h</in>
+          <in>map.h</in>
+          <in>string_tokenizer.h</in>
+          <in>strings.h</in>
+          <in>threadapi.h</in>
+          <in>urlencode.h</in>
+          <in>vector.h</in>
+        </df>
+        <df name="src">
+          <in>base64.c</in>
+          <in>buffer.c</in>
+          <in>crt_abstractions.c</in>
+          <in>doublylinkedlist.c</in>
+          <in>gballoc.c</in>
+          <in>httpheaders.c</in>
+          <in>map.c</in>
+          <in>string_tokenizer.c</in>
+          <in>strings.c</in>
+          <in>urlencode.c</in>
+          <in>vector.c</in>
+        </df>
+        <df name="tools">
+          <df name="macro_utils_h_generator">
+            <df name="properties">
+            </df>
+          </df>
+          <df name="requirements_template">
+          </df>
+        </df>
+        <df name="unittests">
+          <df name="buffer_unittests">
+            <in>buffer_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="crtabstractions_unittests">
+            <in>crtabstractions_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="doublylinkedlist_unittests">
+            <in>doublylinkedlist_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="gballoc_unittests">
+            <in>gballoc_undertest.c</in>
+            <in>gballoc_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="gballoc_without_init_unittests">
+            <in>gballoc_undertest.c</in>
+            <in>gballoc_without_init_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="httpheaders_unittests">
+            <in>httpheaders_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="lock_unittests">
+            <in>lock_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="map_unittests">
+            <in>main.c</in>
+            <in>map_unittests.cpp</in>
+          </df>
+          <df name="string_tokenizer_unittests">
+            <in>main.c</in>
+            <in>string_tokenizer_unittests.cpp</in>
+          </df>
+          <df name="strings_unittests">
+            <in>main.c</in>
+            <in>strings_unittests.cpp</in>
+          </df>
+          <df name="urlencode_unittests">
+            <in>main.c</in>
+            <in>urlencode_unittests.cpp</in>
+          </df>
+          <df name="vector_unittests">
+            <in>main.c</in>
+            <in>vector_unittests.cpp</in>
+          </df>
+        </df>
+      </df>
+      <df name="docs">
+        <df name="media">
+          <df name="create-event-hub">
+          </df>
+          <df name="eventhub_app_from_scratch">
+          </df>
+        </df>
+      </df>
+      <df name="eventhub_client">
+        <df name="build">
+          <df name="linux">
+          </df>
+          <df name="windows">
+          </df>
+        </df>
+        <df name="CMakeFiles">
+          <df name="eventhub_client.dir">
+            <df name="src">
+            </df>
+          </df>
+        </df>
+        <df name="doc">
+          <df name="requirement_docs">
+          </df>
+        </df>
+        <df name="inc">
+          <in>eventdata.h</in>
+          <in>eventhubclient.h</in>
+          <in>eventhubclient_ll.h</in>
+          <in>version.h</in>
+        </df>
+        <df name="samples">
+          <df name="CMakeFiles">
+            <df name="samples.dir">
+            </df>
+          </df>
+          <df name="send">
+            <df name="CMakeFiles">
+              <df name="send_sample.dir">
+              </df>
+            </df>
+            <in>main.c</in>
+            <in>send.c</in>
+            <in>send.h</in>
+          </df>
+          <df name="send_batch">
+            <df name="CMakeFiles">
+              <df name="send_batch_sample.dir">
+              </df>
+            </df>
+            <in>main.c</in>
+            <in>send_batch.c</in>
+            <in>send_batch.h</in>
+          </df>
+          <df name="sendasync">
+            <df name="CMakeFiles">
+              <df name="send_async_sample.dir">
+              </df>
+            </df>
+            <in>main.c</in>
+            <in>sendasync.c</in>
+            <in>sendasync.h</in>
+          </df>
+          <df name="serialization_oss_lib">
+            <in>send.c</in>
+          </df>
+        </df>
+        <df name="src">
+          <in>eventdata.c</in>
+          <in>eventhubclient.c</in>
+          <in>eventhubclient_ll.c</in>
+          <in>version.c</in>
+        </df>
+        <df name="unittests">
+          <df name="eventdata_unittests">
+            <in>eventdata_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="eventhubclient_e2etests">
+            <in>eventhubclient_e2etests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="eventhubclient_ll_unittests">
+            <in>eventhubclient_ll_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+          <df name="eventhubclient_unittests">
+            <in>eventhubclient_unittests.cpp</in>
+            <in>main.c</in>
+          </df>
+        </df>
+      </df>
+      <df name="external">
+        <df name="Debug">
+          <df name="qpid-proton">
+            <df name="src">
+              <df name="qpid_proton">
+                <df name="bin">
+                </df>
+                <df name="contrib">
+                  <df name="proton-hawtdispatch">
+                    <df name="src">
+                      <df name="main">
+                        <df name="java">
+                          <df name="org">
+                            <df name="apache">
+                              <df name="qpid">
+                                <df name="proton">
+                                  <df name="hawtdispatch">
+                                    <df name="api">
+                                    </df>
+                                    <df name="impl">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                      <df name="test">
+                        <df name="java">
+                          <df name="org">
+                            <df name="apache">
+                              <df name="qpid">
+                                <df name="proton">
+                                  <df name="hawtdispatch">
+                                    <df name="api">
+                                    </df>
+                                    <df name="test">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="proton-jms">
+                    <df name="src">
+                      <df name="main">
+                        <df name="java">
+                          <df name="org">
+                            <df name="apache">
+                              <df name="qpid">
+                                <df name="proton">
+                                  <df name="jms">
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                      <df name="test">
+                        <df name="java">
+                          <df name="org">
+                            <df name="apache">
+                              <df name="qpid">
+                                <df name="proton">
+                                  <df name="jms">
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                </df>
+                <df name="design">
+                  <df name="api-reconciliation">
+                    <df name="src">
+                      <df name="main">
+                        <df name="java">
+                          <df name="org">
+                            <df name="apache">
+                              <df name="qpid">
+                                <df name="proton">
+                                  <df name="apireconciliation">
+                                    <df name="packagesearcher">
+                                    </df>
+                                    <df name="reportwriter">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                      <df name="test">
+                        <df name="java">
+                          <df name="org">
+                            <df name="apache">
+                              <df name="qpid">
+                                <df name="proton">
+                                  <df name="apireconciliation">
+                                    <df name="packagesearcher">
+                                      <df name="testdata">
+                                        <df name="manyimpls">
+                                        </df>
+                                        <df name="noimpl">
+                                        </df>
+                                        <df name="subpackage">
+                                          <df name="impl">
+                                          </df>
+                                        </df>
+                                        <df name="tree">
+                                          <df name="leaf">
+                                          </df>
+                                        </df>
+                                      </df>
+                                    </df>
+                                    <df name="reportwriter">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                        <df name="resources">
+                          <df name="org">
+                            <df name="apache">
+                              <df name="qpid">
+                                <df name="proton">
+                                  <df name="apireconciliation">
+                                    <df name="reportwriter">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="src">
+                    <df name="proton">
+                    </df>
+                  </df>
+                </df>
+                <df name="docs">
+                  <df name="markdown">
+                    <df name="engine">
+                    </df>
+                    <df name="messenger">
+                    </df>
+                  </df>
+                </df>
+                <df name="examples">
+                  <df name="c">
+                    <df name="messenger">
+                      <in>recv-async.c</in>
+                      <in>recv.c</in>
+                      <in>send-async.c</in>
+                      <in>send.c</in>
+                    </df>
+                  </df>
+                  <df name="engine">
+                    <df name="c">
+                      <in>precv.c</in>
+                      <in>psend.c</in>
+                    </df>
+                    <df name="java">
+                      <df name="src">
+                        <df name="main">
+                          <df name="java">
+                            <df name="org">
+                              <df name="apache">
+                                <df name="qpid">
+                                  <df name="proton">
+                                    <df name="examples">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="go">
+                    <df name="event">
+                    </df>
+                  </df>
+                  <df name="include">
+                    <df name="pncompat">
+                      <df name="internal">
+                        <in>getopt.c</in>
+                        <in>getopt.h</in>
+                      </df>
+                      <in>misc_defs.h</in>
+                    </df>
+                  </df>
+                  <df name="java">
+                    <df name="messenger">
+                      <df name="src">
+                        <df name="main">
+                          <df name="java">
+                            <df name="org">
+                              <df name="apache">
+                                <df name="qpid">
+                                  <df name="proton">
+                                    <df name="example">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                    <df name="reactor">
+                      <df name="src">
+                        <df name="main">
+                          <df name="java">
+                            <df name="org">
+                              <df name="apache">
+                                <df name="qpid">
+                                  <df name="proton">
+                                    <df name="example">
+                                      <df name="reactor">
+                                      </df>
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="javascript">
+                    <df name="messenger">
+                    </df>
+                  </df>
+                  <df name="perl">
+                    <df name="messenger">
+                    </df>
+                  </df>
+                  <df name="php">
+                    <df name="messenger">
+                    </df>
+                  </df>
+                  <df name="python">
+                    <df name="messenger">
+                    </df>
+                    <df name="reactor">
+                    </df>
+                  </df>
+                  <df name="ruby">
+                    <df name="lib">
+                    </df>
+                    <df name="messenger">
+                    </df>
+                    <df name="reactor">
+                    </df>
+                  </df>
+                </df>
+                <df name="proton-c">
+                  <df name="bindings">
+                    <df name="go">
+                    </df>
+                    <df name="javascript">
+                      <df name="qpid-proton-messenger">
+                        <df name="lib">
+                        </df>
+                      </df>
+                      <in>binding.c</in>
+                    </df>
+                    <df name="node">
+                      <in>javascript.i</in>
+                    </df>
+                    <df name="perl">
+                      <df name="lib">
+                        <df name="qpid">
+                          <df name="proton">
+                          </df>
+                        </df>
+                      </df>
+                      <df name="tests">
+                      </df>
+                      <in>perl.i</in>
+                    </df>
+                    <df name="php">
+                      <in>php.i</in>
+                    </df>
+                    <df name="python">
+                      <df name="docs">
+                      </df>
+                      <df name="proton">
+                      </df>
+                      <df name="setuputils">
+                      </df>
+                      <in>cproton.i</in>
+                    </df>
+                    <df name="ruby">
+                      <df name="ext">
+                        <df name="cproton">
+                        </df>
+                      </df>
+                      <df name="lib">
+                        <df name="codec">
+                        </df>
+                        <df name="core">
+                        </df>
+                        <df name="event">
+                        </df>
+                        <df name="handler">
+                        </df>
+                        <df name="messenger">
+                        </df>
+                        <df name="reactor">
+                        </df>
+                        <df name="types">
+                        </df>
+                        <df name="util">
+                        </df>
+                      </df>
+                      <df name="spec">
+                        <df name="qpid">
+                          <df name="proton">
+                          </df>
+                        </df>
+                      </df>
+                      <in>ruby.i</in>
+                    </df>
+                  </df>
+                  <df name="docs">
+                    <df name="api">
+                    </df>
+                    <df name="man">
+                    </df>
+                  </df>
+                  <df name="include">
+                    <df name="proton">
+                      <in>cid.h</in>
+                      <in>codec.h</in>
+                      <in>condition.h</in>
+                      <in>connection.h</in>
+                      <in>container.h</in>
+                      <in>cproton.i</in>
+                      <in>delivery.h</in>
+                      <in>disposition.h</in>
+                      <in>engine.h</in>
+                      <in>error.h</in>
+                      <in>event.h</in>
+                      <in>handlers.h</in>
+                      <in>import_export.h</in>
+                      <in>io.h</in>
+                      <in>link.h</in>
+                      <in>log.h</in>
+                      <in>message.h</in>
+                      <in>messenger.h</in>
+                      <in>object.h</in>
+                      <in>parser.h</in>
+                      <in>reactor.h</in>
+                      <in>sasl.h</in>
+                      <in>scanner.h</in>
+                      <in>selectable.h</in>
+                      <in>selector.h</in>
+                      <in>session.h</in>
+                      <in>ssl.h</in>
+                      <in>terminus.h</in>
+                      <in>transport.h</in>
+                      <in>type_compat.h</in>
+                      <in>types.h</in>
+                      <in>url.h</in>
+                    </df>
+                  </df>
+                  <df name="mllib">
+                  </df>
+                  <df name="src">
+                    <df name="codec">
+                      <in>codec.c</in>
+                      <in>data.h</in>
+                      <in>decoder.c</in>
+                      <in>decoder.h</in>
+                      <in>encoder.c</in>
+                      <in>encoder.h</in>
+                    </df>
+                    <df name="dispatcher">
+                      <in>dispatcher.c</in>
+                      <in>dispatcher.h</in>
+                    </df>
+                    <df name="engine">
+                      <in>engine-internal.h</in>
+                      <in>engine.c</in>
+                    </df>
+                    <df name="events">
+                      <in>event.c</in>
+                    </df>
+                    <df name="framing">
+                      <in>framing.c</in>
+                      <in>framing.h</in>
+                    </df>
+                    <df name="handlers">
+                      <in>flowcontroller.c</in>
+                      <in>handshaker.c</in>
+                      <in>iohandler.c</in>
+                    </df>
+                    <df name="message">
+                      <in>message.c</in>
+                    </df>
+                    <df name="messenger">
+                      <in>messenger.c</in>
+                      <in>messenger.h</in>
+                      <in>store.c</in>
+                      <in>store.h</in>
+                      <in>subscription.c</in>
+                      <in>subscription.h</in>
+                      <in>transform.c</in>
+                      <in>transform.h</in>
+                    </df>
+                    <df name="object">
+                      <in>iterator.c</in>
+                      <in>list.c</in>
+                      <in>map.c</in>
+                      <in>object.c</in>
+                      <in>record.c</in>
+                      <in>string.c</in>
+                    </df>
+                    <df name="posix">
+                      <in>io.c</in>
+                      <in>selector.c</in>
+                    </df>
+                    <df name="reactor">
+                      <in>acceptor.c</in>
+                      <in>connection.c</in>
+                      <in>handler.c</in>
+                      <in>reactor.c</in>
+                      <in>reactor.h</in>
+                      <in>timer.c</in>
+                    </df>
+                    <df name="sasl">
+                      <in>cyrus_sasl.c</in>
+                      <in>none_sasl.c</in>
+                      <in>sasl-internal.h</in>
+                      <in>sasl.c</in>
+                    </df>
+                    <df name="ssl">
+                      <in>openssl.c</in>
+                      <in>ssl-internal.h</in>
+                      <in>ssl_stub.c</in>
+                    </df>
+                    <df name="tests">
+                      <in>data.c</in>
+                      <in>engine.c</in>
+                      <in>event.c</in>
+                      <in>message.c</in>
+                      <in>object.c</in>
+                      <in>parse-url.c</in>
+                      <in>reactor.c</in>
+                      <in>refcount.c</in>
+                    </df>
+                    <df name="transport">
+                      <in>autodetect.c</in>
+                      <in>autodetect.h</in>
+                      <in>transport.c</in>
+                      <in>transport.h</in>
+                    </df>
+                    <df name="windows">
+                      <in>io.c</in>
+                      <in>iocp.c</in>
+                      <in>iocp.h</in>
+                      <in>schannel.c</in>
+                      <in>selector.c</in>
+                      <in>write_pipeline.c</in>
+                    </df>
+                    <in>buffer.c</in>
+                    <in>buffer.h</in>
+                    <in>config.h</in>
+                    <in>dispatch_actions.h</in>
+                    <in>error.c</in>
+                    <in>log.c</in>
+                    <in>log_private.h</in>
+                    <in>parser.c</in>
+                    <in>platform.c</in>
+                    <in>platform.h</in>
+                    <in>platform_fmt.h</in>
+                    <in>proton-dump.c</in>
+                    <in>scanner.c</in>
+                    <in>selectable.c</in>
+                    <in>selectable.h</in>
+                    <in>types.c</in>
+                    <in>url.c</in>
+                    <in>util.c</in>
+                    <in>util.h</in>
+                  </df>
+                </df>
+                <df name="proton-j">
+                  <df name="src">
+                    <df name="main">
+                      <df name="java">
+                        <df name="org">
+                          <df name="apache">
+                            <df name="qpid">
+                              <df name="proton">
+                                <df name="amqp">
+                                  <df name="messaging">
+                                  </df>
+                                  <df name="security">
+                                  </df>
+                                  <df name="transaction">
+                                  </df>
+                                  <df name="transport">
+                                  </df>
+                                </df>
+                                <df name="codec">
+                                  <df name="impl">
+                                  </df>
+                                  <df name="messaging">
+                                  </df>
+                                  <df name="security">
+                                  </df>
+                                  <df name="transaction">
+                                  </df>
+                                  <df name="transport">
+                                  </df>
+                                </df>
+                                <df name="driver">
+                                  <df name="impl">
+                                  </df>
+                                </df>
+                                <df name="engine">
+                                  <df name="impl">
+                                    <df name="ssl">
+                                    </df>
+                                  </df>
+                                </df>
+                                <df name="framing">
+                                </df>
+                                <df name="logging">
+                                </df>
+                                <df name="message">
+                                  <df name="impl">
+                                  </df>
+                                </df>
+                                <df name="messenger">
+                                  <df name="impl">
+                                  </df>
+                                </df>
+                                <df name="reactor">
+                                  <df name="impl">
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                      <df name="resources">
+                        <df name="META-INF">
+                          <df name="services">
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                    <df name="test">
+                      <df name="java">
+                        <df name="org">
+                          <df name="apache">
+                            <df name="qpid">
+                              <df name="proton">
+                                <df name="amqp">
+                                  <df name="transport">
+                                  </df>
+                                </df>
+                                <df name="codec">
+                                  <df name="impl">
+                                  </df>
+                                </df>
+                                <df name="engine">
+                                  <df name="impl">
+                                    <df name="ssl">
+                                    </df>
+                                  </df>
+                                </df>
+                                <df name="messenger">
+                                  <df name="impl">
+                                  </df>
+                                </df>
+                                <df name="reactor">
+                                  <df name="impl">
+                                  </df>
+                                </df>
+                                <df name="systemtests">
+                                  <df name="engine">
+                                  </df>
+                                </df>
+                                <df name="test">
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                      <df name="resources">
+                        <df name="META-INF">
+                          <df name="services">
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                </df>
+                <df name="tests">
+                  <df name="interop">
+                  </df>
+                  <df name="java">
+                    <df name="org">
+                      <df name="apache">
+                        <df name="qpid">
+                          <df name="proton">
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="javascript">
+                  </df>
+                  <df name="python">
+                    <df name="proton_tests">
+                      <df name="ssl_db">
+                      </df>
+                    </df>
+                  </df>
+                  <df name="resources">
+                  </df>
+                  <df name="ruby">
+                    <df name="proton_tests">
+                    </df>
+                  </df>
+                  <df name="smoke">
+                  </df>
+                  <df name="tools">
+                    <df name="apps">
+                      <df name="c">
+                        <in>msgr-common.c</in>
+                        <in>msgr-common.h</in>
+                        <in>msgr-recv.c</in>
+                        <in>msgr-send.c</in>
+                        <in>reactor-recv.c</in>
+                        <in>reactor-send.c</in>
+                      </df>
+                      <df name="python">
+                      </df>
+                    </df>
+                  </df>
+                </df>
+                <df name="tools">
+                  <df name="cmake">
+                    <df name="Modules">
+                    </df>
+                  </df>
+                </df>
+              </df>
+              <df name="qpid_proton-stamp">
+              </df>
+            </df>
+            <df name="tmp">
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="lib">
+        <df name="Debug">
+          <df name="qpid-proton">
+            <df name="bin">
+            </df>
+            <df name="include">
+              <df name="proton">
+                <in>cid.h</in>
+                <in>codec.h</in>
+                <in>condition.h</in>
+                <in>connection.h</in>
+                <in>container.h</in>
+                <in>cproton.i</in>
+                <in>delivery.h</in>
+                <in>disposition.h</in>
+                <in>engine.h</in>
+                <in>error.h</in>
+                <in>event.h</in>
+                <in>handlers.h</in>
+                <in>import_export.h</in>
+                <in>io.h</in>
+                <in>link.h</in>
+                <in>log.h</in>
+                <in>message.h</in>
+                <in>messenger.h</in>
+                <in>object.h</in>
+                <in>parser.h</in>
+                <in>reactor.h</in>
+                <in>sasl.h</in>
+                <in>scanner.h</in>
+                <in>selectable.h</in>
+                <in>selector.h</in>
+                <in>session.h</in>
+                <in>ssl.h</in>
+                <in>terminus.h</in>
+                <in>transport.h</in>
+                <in>type_compat.h</in>
+                <in>types.h</in>
+                <in>url.h</in>
+                <in>version.h</in>
+              </df>
+            </df>
+            <df name="lib64">
+              <df name="cmake">
+                <df name="Proton">
+                </df>
+              </df>
+              <df name="pkgconfig">
+              </df>
+              <df name="proton">
+                <df name="bindings">
+                  <df name="perl">
+                    <df name="auto">
+                      <df name="cproton_perl">
+                      </df>
+                    </df>
+                    <df name="qpid">
+                      <df name="proton">
+                      </df>
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+            <df name="share">
+              <df name="java">
+              </df>
+              <df name="man">
+                <df name="man1">
+                </df>
+              </df>
+              <df name="proton-0.11">
+                <df name="examples">
+                  <df name="c">
+                    <df name="messenger">
+                      <in>recv-async.c</in>
+                      <in>recv.c</in>
+                      <in>send-async.c</in>
+                      <in>send.c</in>
+                    </df>
+                  </df>
+                  <df name="engine">
+                    <df name="c">
+                      <in>precv.c</in>
+                      <in>psend.c</in>
+                    </df>
+                    <df name="java">
+                      <df name="src">
+                        <df name="main">
+                          <df name="java">
+                            <df name="org">
+                              <df name="apache">
+                                <df name="qpid">
+                                  <df name="proton">
+                                    <df name="examples">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="go">
+                    <df name="event">
+                    </df>
+                  </df>
+                  <df name="include">
+                    <df name="pncompat">
+                      <df name="internal">
+                        <in>getopt.c</in>
+                        <in>getopt.h</in>
+                      </df>
+                      <in>misc_defs.h</in>
+                    </df>
+                  </df>
+                  <df name="java">
+                    <df name="messenger">
+                      <df name="src">
+                        <df name="main">
+                          <df name="java">
+                            <df name="org">
+                              <df name="apache">
+                                <df name="qpid">
+                                  <df name="proton">
+                                    <df name="example">
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                    <df name="reactor">
+                      <df name="src">
+                        <df name="main">
+                          <df name="java">
+                            <df name="org">
+                              <df name="apache">
+                                <df name="qpid">
+                                  <df name="proton">
+                                    <df name="example">
+                                      <df name="reactor">
+                                      </df>
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="javascript">
+                    <df name="messenger">
+                    </df>
+                  </df>
+                  <df name="perl">
+                    <df name="messenger">
+                    </df>
+                  </df>
+                  <df name="php">
+                    <df name="messenger">
+                    </df>
+                  </df>
+                  <df name="python">
+                    <df name="messenger">
+                    </df>
+                    <df name="reactor">
+                    </df>
+                  </df>
+                  <df name="ruby">
+                    <df name="lib">
+                    </df>
+                    <df name="messenger">
+                    </df>
+                    <df name="reactor">
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="testtools">
+        <df name="CMakeFiles">
+        </df>
+        <df name="ctest">
+          <df name="build">
+            <df name="linux">
+            </df>
+            <df name="windows">
+            </df>
+          </df>
+          <df name="doc">
+          </df>
+          <df name="inc">
+            <in>ctest.h</in>
+            <in>ctest_macros.h</in>
+          </df>
+          <df name="src">
+            <in>ctest.c</in>
+          </df>
+          <df name="unittests">
+            <df name="ctestunittests">
+              <in>assertfailurestests.c</in>
+              <in>assertsuccesstests.c</in>
+              <in>ctestunittests.c</in>
+              <in>simpletestsuiteonetest.c</in>
+              <in>simpletestsuiteonetestcpp.cpp</in>
+              <in>simpletestsuitetwotests.c</in>
+              <in>testfunctioncleanuptests.c</in>
+              <in>testfunctioninitializetests.c</in>
+              <in>testsuiteinitializecleanuptests.c</in>
+            </df>
+          </df>
+        </df>
+        <df name="eventhub_test">
+          <df name="CMakeFiles">
+            <df name="eventhub_test.dir">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="inc">
+            <in>eventhub_account.h</in>
+            <in>eventhub_testclient.h</in>
+          </df>
+          <df name="src">
+            <in>eventhub_account.c</in>
+            <in>eventhub_testclient.c</in>
+          </df>
+        </df>
+        <df name="micromock">
+          <df name="build">
+            <df name="linux">
+            </df>
+            <df name="windows">
+            </df>
+          </df>
+          <df name="doc">
+          </df>
+          <df name="inc">
+            <in>globalmock.h</in>
+            <in>macro_utils.h</in>
+            <in>micromock.h</in>
+            <in>micromockcallmacros.h</in>
+            <in>micromockcharstararenullterminatedstrings.h</in>
+            <in>micromockcommon.h</in>
+            <in>micromockenumtostring.h</in>
+            <in>micromockexception.h</in>
+            <in>micromocktestmutex.h</in>
+            <in>micromocktestrunnerhooks.h</in>
+            <in>mock.h</in>
+            <in>mockcallargument.h</in>
+            <in>mockcallargumentbase.h</in>
+            <in>mockcallcomparer.h</in>
+            <in>mockcallrecorder.h</in>
+            <in>mockmethodcall.h</in>
+            <in>mockmethodcallbase.h</in>
+            <in>mockresultvalue.h</in>
+            <in>mockvalue.h</in>
+            <in>mockvaluebase.h</in>
+            <in>nicecallcomparer.h</in>
+            <in>stdafx.h</in>
+            <in>strictorderedcallcomparer.h</in>
+            <in>strictunorderedcallcomparer.h</in>
+            <in>targetver.h</in>
+            <in>threadsafeglobalmock.h</in>
+            <in>timediscretemicromock.h</in>
+            <in>timediscretemicromockcallmacros.h</in>
+          </df>
+          <df name="src">
+            <in>micromockcharstararenullterminatedstrings.cpp</in>
+            <in>micromockexception.cpp</in>
+            <in>micromocktestmutex.cpp</in>
+            <in>mockcallrecorder.cpp</in>
+            <in>mockmethodcallbase.cpp</in>
+            <in>mockvaluebase.cpp</in>
+            <in>stdafx.cpp</in>
+            <in>timediscretemicromock.cpp</in>
+          </df>
+          <df name="tools">
+            <df name="micromockgenerator">
+              <in>micromockgenerator.cpp</in>
+              <in>stdafx.cpp</in>
+              <in>stdafx.h</in>
+              <in>targetver.h</in>
+            </df>
+          </df>
+          <df name="unittests">
+            <df name="micromocktest">
+              <in>cmockvalueunittests.cpp</in>
+              <in>hypothetic_module.c</in>
+              <in>hypothetic_module.h</in>
+              <in>hypothetic_module_interfaces.h</in>
+              <in>micromockcallcomparisonunittests.cpp</in>
+              <in>micromocktest.cpp</in>
+              <in>micromocktest_with_ctest.c</in>
+              <in>micromockvalidateargumentbufferunittests.cpp</in>
+              <in>nullargsstringificationunittests.cpp</in>
+              <in>resource.h</in>
+              <in>stdafx.cpp</in>
+              <in>stdafx.h</in>
+              <in>stdafx_c.h</in>
+              <in>targetver.h</in>
+              <in>timediscretemicromocktest_stim.cpp</in>
+              <in>timediscretemicromocktestvoidvoid.cpp</in>
+              <in>timediscretemicromockwithreturnandparameters.cpp</in>
+            </df>
+          </df>
+        </df>
+        <df name="sal">
+          <df name="inc">
+            <in>no_sal2.h</in>
+            <in>sal.h</in>
+          </df>
+        </df>
+        <df name="testrunnerswitcher">
+          <df name="inc">
+            <in>testrunnerswitcher.h</in>
+          </df>
+        </df>
+        <df name="unittests_project_template">
+          <df name="iotclientunitteststemplate">
+            <df name="iotclientunitteststemplatevsix">
+              <df name="projecttemplates">
+                <in>main.c</in>
+                <in>unittest1.cpp</in>
+              </df>
+            </df>
+            <in>commonincludes.h</in>
+            <in>guids.cpp</in>
+            <in>guids.h</in>
+            <in>module.cpp</in>
+            <in>package.h</in>
+            <in>resource.h</in>
+            <in>stdafx.cpp</in>
+            <in>stdafx.h</in>
+          </df>
+          <df name="iotclientunitteststemplateui">
+            <in>commandids.h</in>
+            <in>resource.h</in>
+          </df>
+        </df>
+        <df name="unittests_props">
+        </df>
+      </df>
+      <df name="tools">
+        <df name="csharp_consumeeventsfromeventhub">
+          <df name="csharp_consumeeventsfromeventhub">
+            <df name="properties">
+            </df>
+          </df>
+        </df>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>4</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

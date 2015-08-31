@@ -93,43 +93,6 @@ clean: CMakeFiles/core.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/qpid_proton.dir
-
-# All Build rule for target.
-CMakeFiles/qpid_proton.dir/all:
-	$(MAKE) -f CMakeFiles/qpid_proton.dir/build.make CMakeFiles/qpid_proton.dir/depend
-	$(MAKE) -f CMakeFiles/qpid_proton.dir/build.make CMakeFiles/qpid_proton.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=24,25,26,27,28,29,30,31 "Built target qpid_proton"
-.PHONY : CMakeFiles/qpid_proton.dir/all
-
-# Include target in all.
-all: CMakeFiles/qpid_proton.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/qpid_proton.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/qpid_proton.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles 0
-.PHONY : CMakeFiles/qpid_proton.dir/rule
-
-# Convenience name for target.
-qpid_proton: CMakeFiles/qpid_proton.dir/rule
-
-.PHONY : qpid_proton
-
-# clean rule for target.
-CMakeFiles/qpid_proton.dir/clean:
-	$(MAKE) -f CMakeFiles/qpid_proton.dir/build.make CMakeFiles/qpid_proton.dir/clean
-.PHONY : CMakeFiles/qpid_proton.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/qpid_proton.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Directory level rules for directory common
 
 # Convenience name for "all" pass in the directory.
@@ -270,10 +233,10 @@ eventhub_client/samples/preinstall: eventhub_client/samples/sendasync/preinstall
 # Target rules for target eventhub_client/samples/CMakeFiles/samples.dir
 
 # All Build rule for target.
-eventhub_client/samples/CMakeFiles/samples.dir/all: testtools/eventhub_test/CMakeFiles/eventhub_test.dir/all
 eventhub_client/samples/CMakeFiles/samples.dir/all: eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/all
-eventhub_client/samples/CMakeFiles/samples.dir/all: eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/all
 eventhub_client/samples/CMakeFiles/samples.dir/all: eventhub_client/samples/send/CMakeFiles/send_sample.dir/all
+eventhub_client/samples/CMakeFiles/samples.dir/all: eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/all
+eventhub_client/samples/CMakeFiles/samples.dir/all: testtools/eventhub_test/CMakeFiles/eventhub_test.dir/all
 	$(MAKE) -f eventhub_client/samples/CMakeFiles/samples.dir/build.make eventhub_client/samples/CMakeFiles/samples.dir/depend
 	$(MAKE) -f eventhub_client/samples/CMakeFiles/samples.dir/build.make eventhub_client/samples/CMakeFiles/samples.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num= "Built target samples"
@@ -326,7 +289,7 @@ eventhub_client/samples/send/preinstall:
 eventhub_client/samples/send/CMakeFiles/send_sample.dir/all: eventhub_client/CMakeFiles/eventhub_client.dir/all
 	$(MAKE) -f eventhub_client/samples/send/CMakeFiles/send_sample.dir/build.make eventhub_client/samples/send/CMakeFiles/send_sample.dir/depend
 	$(MAKE) -f eventhub_client/samples/send/CMakeFiles/send_sample.dir/build.make eventhub_client/samples/send/CMakeFiles/send_sample.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=38,39,40 "Built target send_sample"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=30,31,32 "Built target send_sample"
 .PHONY : eventhub_client/samples/send/CMakeFiles/send_sample.dir/all
 
 # Include target in all.
@@ -381,7 +344,7 @@ eventhub_client/samples/send_batch/preinstall:
 eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/all: eventhub_client/CMakeFiles/eventhub_client.dir/all
 	$(MAKE) -f eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/build.make eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/depend
 	$(MAKE) -f eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/build.make eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=35,36,37 "Built target send_batch_sample"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=27,28,29 "Built target send_batch_sample"
 .PHONY : eventhub_client/samples/send_batch/CMakeFiles/send_batch_sample.dir/all
 
 # Include target in all.
@@ -436,7 +399,7 @@ eventhub_client/samples/sendasync/preinstall:
 eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/all: eventhub_client/CMakeFiles/eventhub_client.dir/all
 	$(MAKE) -f eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/build.make eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/depend
 	$(MAKE) -f eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/build.make eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=32,33,34 "Built target send_async_sample"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/clemensv/Github/azure-event-hubs/c/build/CMakeFiles --progress-num=24,25,26 "Built target send_async_sample"
 .PHONY : eventhub_client/samples/sendasync/CMakeFiles/send_async_sample.dir/all
 
 # Include target in all.

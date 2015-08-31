@@ -26,8 +26,10 @@ SOFTWARE.
 */
 
 #include "send.h"
+//#include <proton/log.h>
 
 int main(void)
 {
+  //  pn_log_enable(1);
     return Send_Sample();
 }

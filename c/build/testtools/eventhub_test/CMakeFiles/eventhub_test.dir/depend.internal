@@ -14,22 +14,15 @@ testtools/eventhub_test/CMakeFiles/eventhub_test.dir/src/eventhub_testclient.c.o
  ../common/inc/macro_utils.h
  ../common/inc/strings.h
  ../common/inc/threadapi.h
- ../lib/qpid-proton/include/proton/cid.h
- ../lib/qpid-proton/include/proton/codec.h
- ../lib/qpid-proton/include/proton/condition.h
- ../lib/qpid-proton/include/proton/error.h
- ../lib/qpid-proton/include/proton/event.h
- ../lib/qpid-proton/include/proton/import_export.h
- ../lib/qpid-proton/include/proton/io.h
- ../lib/qpid-proton/include/proton/link.h
- ../lib/qpid-proton/include/proton/message.h
- ../lib/qpid-proton/include/proton/messenger.h
- ../lib/qpid-proton/include/proton/object.h
- ../lib/qpid-proton/include/proton/selectable.h
- ../lib/qpid-proton/include/proton/ssl.h
- ../lib/qpid-proton/include/proton/terminus.h
- ../lib/qpid-proton/include/proton/transport.h
- ../lib/qpid-proton/include/proton/type_compat.h
- ../lib/qpid-proton/include/proton/types.h
  ../testtools/eventhub_test/inc/eventhub_testclient.h
  /Users/clemensv/Github/azure-event-hubs/c/testtools/eventhub_test/src/eventhub_testclient.c
+ /usr/local/include/proton/codec.h
+ /usr/local/include/proton/error.h
+ /usr/local/include/proton/import_export.h
+ /usr/local/include/proton/io.h
+ /usr/local/include/proton/message.h
+ /usr/local/include/proton/messenger.h
+ /usr/local/include/proton/object.h
+ /usr/local/include/proton/selectable.h
+ /usr/local/include/proton/type_compat.h
+ /usr/local/include/proton/types.h

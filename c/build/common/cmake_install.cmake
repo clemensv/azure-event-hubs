@@ -27,3 +27,32 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/clemensv/Github/azure-event-hubs/c/build/common/libeventhub_common.a")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libeventhub_common.a" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libeventhub_common.a")
+    execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libeventhub_common.a")
+  endif()
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/eventhubs" TYPE FILE FILES
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/base64.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/buffer_.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/crt_abstractions.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/doublylinkedlist.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/gballoc.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/httpapi.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/httpheaders.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/iot_logging.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/lock.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/macro_utils.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/map.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/string_tokenizer.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/strings.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/threadapi.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/urlencode.h"
+    "/Users/clemensv/Github/azure-event-hubs/c/common/inc/vector.h"
+    )
+endif()
+

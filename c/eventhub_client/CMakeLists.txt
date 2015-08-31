@@ -24,5 +24,15 @@ target_link_libraries (eventhub_client ${CMAKE_THREAD_LIBS_INIT}
 add_dependencies(eventhub_client eventhub_common)
 add_dependencies(core eventhub_client)
 
+install (TARGETS eventhub_client 
+               ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
+               LIBRARY DESTINATION ${LIB_INSTALL_DIR})
+ 
+
+# Install header files
+file(GLOB headers "inc/*.[hi]")
+install (FILES ${headers} DESTINATION ${INCLUDE_INSTALL_DIR}/eventhubs)
+
+
 
 add_subdirectory(samples)

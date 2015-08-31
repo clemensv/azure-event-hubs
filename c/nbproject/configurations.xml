@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="CMakeFiles">
+        <df name="3.3.1">
+          <df name="CompilerIdC">
+            <in>CMakeCCompilerId.c</in>
+          </df>
+        </df>
+      </df>
+      <df name="common">
+        <df name="adapters">
+          <in>httpapi_curl.c</in>
+          <in>lock_pthreads.c</in>
+          <in>threadapi_pthreads.c</in>
+        </df>
+        <df name="src">
+          <in>base64.c</in>
+          <in>buffer.c</in>
+          <in>crt_abstractions.c</in>
+          <in>doublylinkedlist.c</in>
+          <in>gballoc.c</in>
+          <in>httpheaders.c</in>
+          <in>map.c</in>
+          <in>string_tokenizer.c</in>
+          <in>strings.c</in>
+          <in>urlencode.c</in>
+          <in>vector.c</in>
+        </df>
+      </df>
+      <df name="eventhub_client">
+        <df name="samples">
+          <df name="send">
+            <in>main.c</in>
+            <in>send.c</in>
+          </df>
+          <df name="send_batch">
+            <in>main.c</in>
+            <in>send_batch.c</in>
+          </df>
+          <df name="sendasync">
+            <in>main.c</in>
+            <in>sendasync.c</in>
+          </df>
+        </df>
+        <df name="src">
+          <in>eventdata.c</in>
+          <in>eventhubclient.c</in>
+          <in>eventhubclient_ll.c</in>
+          <in>version.c</in>
+        </df>
+      </df>
+      <df name="testtools">
+        <df name="eventhub_test">
+          <df name="src">
+            <in>eventhub_account.c</in>
+            <in>eventhub_testclient.c</in>
+          </df>
+        </df>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>CMakeLists.txt</itemPath>
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-g -msse4.2"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>eventhub_client/samples/send/send_sample</executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="CMakeFiles/3.3.1/CompilerIdC/CMakeCCompilerId.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="common/adapters/httpapi_curl.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/adapters/lock_pthreads.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/adapters/threadapi_pthreads.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/base64.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/buffer.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/crt_abstractions.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/doublylinkedlist.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/gballoc.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/httpheaders.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/map.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/string_tokenizer.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/strings.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/urlencode.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="common/src/vector.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/samples/send/main.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/samples/send/send.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/samples/send_batch/main.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/samples/send_batch/send_batch.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/samples/sendasync/main.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/samples/sendasync/sendasync.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/src/eventdata.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/src/eventhubclient.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/src/eventhubclient_ll.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="eventhub_client/src/version.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <folder path="0/common">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>/usr/local/include</pElem>
+            <pElem>common/inc</pElem>
+            <pElem>common</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/eventhub_client">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>/usr/local/include</pElem>
+            <pElem>common/inc</pElem>
+            <pElem>eventhub_client/inc</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/eventhub_client/src">
+        <cTool>
+          <incDir>
+            <pElem>eventhub_client</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/testtools">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>/usr/local/include</pElem>
+            <pElem>testtools/eventhub_test/inc</pElem>
+            <pElem>common/inc</pElem>
+            <pElem>testtools/eventhub_test</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <item path="testtools/eventhub_test/src/eventhub_account.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <item path="testtools/eventhub_test/src/eventhub_testclient.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
