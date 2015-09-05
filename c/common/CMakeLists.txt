@@ -19,7 +19,11 @@ add_library(eventhub_common STATIC ${EVENTHUB_COMMON_SOURCES})
 
 target_link_libraries (eventhub_common ${CMAKE_THREAD_LIBS_INIT})
 
-#GET_PROPERTY(eventhub_common_location TARGET eventhub_common PROPERTY LOCATION)
+IF (${CMAKE_MAJOR_VERSION} LESS 3 )
+   GET_PROPERTY(eventhub_common_location_prop TARGET eventhub_common PROPERTY LOCATION)
+   set(eventhub_common_location ${eventhub_common_location_prop} CACHE FILEPATH "")
+ENDIF()
+
 
 add_dependencies(core eventhub_common)
 

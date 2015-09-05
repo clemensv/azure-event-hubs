@@ -50,7 +50,7 @@ int Send_Sample(void)
     g_id++;
 
     char msgContent[BUFFER_SIZE];
-    size_t msgLength = sprintf_s(msgContent, BUFFER_SIZE, "{\"messageId\":%d, \"name\":\"Send_Sample\"}", g_id);
+    size_t msgLength = snprintf(msgContent, BUFFER_SIZE, "{\"messageId\":%d, \"name\":\"Send_Sample\"}", g_id);
 
     (void)printf("Starting the EventHub Client Send Sample (%s)...\r\n", EventHubClient_GetVersionString() ); 
 

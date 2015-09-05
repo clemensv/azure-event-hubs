@@ -14,10 +14,18 @@ find_package(Threads REQUIRED)
 
 add_executable (send_async_sample ${SEND_ASYNC_SAMPLE_SOURCES})
 
+IF (${CMAKE_MAJOR_VERSION} LESS 3 )
+  set( commonlib ${eventhub_common_location})
+  set( clientlib ${eventhub_client_location})
+ELSE()
+  set(commonlib  $<TARGET_FILE:eventhub_common>) 
+  set(clientlib  $<TARGET_FILE:eventhub_client>)  
+ENDIF()
+
 # Libraries to link in reverse order because that's what ld requires.
 target_link_libraries (send_async_sample
-    $<TARGET_FILE:eventhub_client> 
-    $<TARGET_FILE:eventhub_common>  
+    ${clientlib} 
+    ${commonlib}  
     ${CMAKE_THREAD_LIBS_INIT}
     ${${PROJECT_NAME}_EXTERNAL_LIBRARIES}
     )

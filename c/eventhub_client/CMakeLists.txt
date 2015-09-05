@@ -15,11 +15,19 @@ find_package(Threads REQUIRED)
 
 add_library(eventhub_client STATIC ${EVENTHUB_CLIENT_SOURCES})
 
-target_link_libraries (eventhub_client ${CMAKE_THREAD_LIBS_INIT}
-    $<TARGET_FILE:eventhub_common> 
-    ${${PROJECT_NAME}_EXTERNAL_LIBRARIES})
+IF (${CMAKE_MAJOR_VERSION} LESS 3)
+     target_link_libraries (eventhub_client ${CMAKE_THREAD_LIBS_INIT}
+        ${eventhub_common_location} 
+        ${${PROJECT_NAME}_EXTERNAL_LIBRARIES})
+     GET_PROPERTY(eventhub_client_location_prop TARGET eventhub_client PROPERTY LOCATION)
+     set(eventhub_client_location ${eventhub_client_location_prop} CACHE FILEPATH "")
+ELSE()
+    target_link_libraries (eventhub_client ${CMAKE_THREAD_LIBS_INIT}
+        $<TARGET_FILE:eventhub_common> 
+        ${${PROJECT_NAME}_EXTERNAL_LIBRARIES})
+ENDIF()
 
-#GET_PROPERTY(eventhub_client_location TARGET eventhub_client PROPERTY LOCATION)
+
 
 add_dependencies(eventhub_client eventhub_common)
 add_dependencies(core eventhub_client)
