@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\CMakeLists.txt" />
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\9eb4980660d887b45a436ca5f56cc0d4\qpid_proton-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\c0b3c0348c79af1a18fb1ffa9277d504\qpid_proton.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\git\azure-event-hubs\c\build\CMakeFiles\qpid_proton" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5302AFDB-AD45-450F-B4D1-0E9ACD5017AA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -2,12 +2,21 @@
 # eventhub_common
 #
 
-file(GLOB_RECURSE EVENTHUB_COMMON_SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/adapters/threadapi_pthreads.c 
-    ${CMAKE_CURRENT_SOURCE_DIR}/adapters/httpapi_curl.c 
-    ${CMAKE_CURRENT_SOURCE_DIR}/adapters/lock_pthreads.c)
+IF(WIN32)
+	file(GLOB_RECURSE EVENTHUB_COMMON_SOURCES
+		${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/*.c
+		${CMAKE_CURRENT_SOURCE_DIR}/adapters/threadapi_win32.c 
+		${CMAKE_CURRENT_SOURCE_DIR}/adapters/httpapi_wininet.c 
+		${CMAKE_CURRENT_SOURCE_DIR}/adapters/lock_c11.c)
+ELSE()
+	file(GLOB_RECURSE EVENTHUB_COMMON_SOURCES
+		${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h
+		${CMAKE_CURRENT_SOURCE_DIR}/src/*.c
+		${CMAKE_CURRENT_SOURCE_DIR}/adapters/threadapi_pthreads.c 
+		${CMAKE_CURRENT_SOURCE_DIR}/adapters/httpapi_curl.c 
+		${CMAKE_CURRENT_SOURCE_DIR}/adapters/lock_pthreads.c)
+ENDIF()
 
 list(SORT EVENTHUB_COMMON_SOURCES)
 create_source_group("Source Files" "${CMAKE_CURRENT_SOURCE_DIR}/src" ${EVENTHUB_COMMON_SOURCES})

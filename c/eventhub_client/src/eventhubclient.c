@@ -249,6 +249,7 @@ EVENTHUB_CALLBACK_STRUCT * EventHubClient_InitUserContext()
 
 void EventHub_DestroyUserContext(EVENTHUB_CALLBACK_STRUCT * eventhubUserContext)
 {
+	Unlock(eventhubUserContext->completionLock);
     Lock_Deinit(eventhubUserContext->completionLock);
     Condition_Deinit(eventhubUserContext->completionCondition);
     free(eventhubUserContext);

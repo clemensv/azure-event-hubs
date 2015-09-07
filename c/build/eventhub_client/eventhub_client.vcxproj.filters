@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\git\azure-event-hubs\c\eventhub_client\src\eventdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\eventhub_client\src\eventhubclient.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\eventhub_client\src\eventhubclient_ll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\eventhub_client\src\version.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\git\azure-event-hubs\c\eventhub_client\inc\eventdata.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\eventhub_client\inc\eventhubclient.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\eventhub_client\inc\eventhubclient_ll.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\eventhub_client\inc\version.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\eventhub_client\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{785BD289-2079-405D-86CF-917D3509BAA6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\..">
+      <UniqueIdentifier>{1101376E-F3AE-4879-8091-4C2B2DC67E56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\..\inc">
+      <UniqueIdentifier>{BFE27C1E-824F-470D-87AD-4C55BE3494A7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

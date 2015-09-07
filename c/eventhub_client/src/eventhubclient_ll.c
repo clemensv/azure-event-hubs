@@ -32,9 +32,9 @@ IN THE SOFTWARE.
 #include "version.h"
 #include "crt_abstractions.h"
 
-#include "proton/message.h"
-#include "proton/messenger.h"
-#include "proton/codec.h"
+#include <proton/message.h>
+#include <proton/messenger.h>
+#include <proton/codec.h>
 
 #include "doublylinkedlist.h"
 

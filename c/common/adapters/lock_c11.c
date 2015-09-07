@@ -119,3 +119,49 @@ LOCK_RESULT Lock_Deinit(LOCK_HANDLE handle)
 	
 	return result;
 }
+
+extern COND_HANDLE Condition_Init(int initial_count)
+{
+	cnd_t * cond = (cnd_t*)malloc(sizeof(cnd_t));
+	cnd_init(cond, NULL);
+	return cond;
+}
+
+extern COND_RESULT Condition_Post(COND_HANDLE handle)
+{
+	cnd_broadcast((cnd_t*)handle);
+	return COND_OK;
+}
+
+extern COND_RESULT Condition_Wait(COND_HANDLE  handle, LOCK_HANDLE lock, int timeout_milliseconds)
+{
+	if (timeout_milliseconds > 0)
+	{
+		struct timespec tm;
+		tm.tv_sec = timeout_milliseconds / 1000;
+		tm.tv_nsec = (timeout_milliseconds % 1000) * 1000000L;
+		int wait_result = cnd_timedwait((cnd_t *)handle, (mtx_t *)lock, &tm);
+		if (wait_result == ETIMEDOUT)
+		{
+			return COND_TIMEOUT;
+		}
+		else
+		{
+			return COND_ERROR;
+		}
+	}
+	else
+	{
+		if (cnd_wait((cnd_t*)handle, (mtx_t *)lock) != 0)
+		{
+			return COND_ERROR;
+		}
+	}
+	return COND_OK;
+}
+
+extern COND_RESULT Condition_Deinit(COND_HANDLE  handle)
+{
+	cnd_destroy((cnd_t*)handle);
+	return COND_OK;
+}

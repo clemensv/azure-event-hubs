@@ -1,0 +1,853 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{BDB7B7D8-601B-4FC8-9177-E33465F3D831}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>qpid_proton</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\git\azure-event-hubs\c\build;C:\git\azure-event-hubs\c\lib\qpid-proton\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\git\azure-event-hubs\c\build;C:\git\azure-event-hubs\c\lib\qpid-proton\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\git\azure-event-hubs\c\build;C:\git\azure-event-hubs\c\lib\qpid-proton\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\git\azure-event-hubs\c\build;C:\git\azure-event-hubs\c\lib\qpid-proton\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/git/azure-event-hubs/c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/git/azure-event-hubs/c -BC:/git/azure-event-hubs/c/build --check-stamp-file C:\git\azure-event-hubs\c\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/CMakeLists.txt;C:\git\azure-event-hubs\c\CMakeLists.txt;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\ExternalProject.cmake;C:\git\azure-event-hubs\c\cmake\version.cmake;C:\git\azure-event-hubs\c\cmake\compiler_options.cmake;C:\git\azure-event-hubs\c\cmake\dependencies.cmake;C:\git\azure-event-hubs\c\cmake\FindQPID_PROTON.cmake;C:\git\azure-event-hubs\c\cmake\build_qpid_proton_dependency.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindGit.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\RepositoryInfo.txt.in;C:\git\azure-event-hubs\c\external\qpid-proton\tmp\qpid_proton-cfgcmd.txt.in;C:\git\azure-event-hubs\c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/git/azure-event-hubs/c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/git/azure-event-hubs/c -BC:/git/azure-event-hubs/c/build --check-stamp-file C:\git\azure-event-hubs\c\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/CMakeLists.txt;C:\git\azure-event-hubs\c\CMakeLists.txt;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\ExternalProject.cmake;C:\git\azure-event-hubs\c\cmake\version.cmake;C:\git\azure-event-hubs\c\cmake\compiler_options.cmake;C:\git\azure-event-hubs\c\cmake\dependencies.cmake;C:\git\azure-event-hubs\c\cmake\FindQPID_PROTON.cmake;C:\git\azure-event-hubs\c\cmake\build_qpid_proton_dependency.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindGit.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\RepositoryInfo.txt.in;C:\git\azure-event-hubs\c\external\qpid-proton\tmp\qpid_proton-cfgcmd.txt.in;C:\git\azure-event-hubs\c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/git/azure-event-hubs/c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/git/azure-event-hubs/c -BC:/git/azure-event-hubs/c/build --check-stamp-file C:\git\azure-event-hubs\c\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/CMakeLists.txt;C:\git\azure-event-hubs\c\CMakeLists.txt;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\ExternalProject.cmake;C:\git\azure-event-hubs\c\cmake\version.cmake;C:\git\azure-event-hubs\c\cmake\compiler_options.cmake;C:\git\azure-event-hubs\c\cmake\dependencies.cmake;C:\git\azure-event-hubs\c\cmake\FindQPID_PROTON.cmake;C:\git\azure-event-hubs\c\cmake\build_qpid_proton_dependency.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindGit.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\RepositoryInfo.txt.in;C:\git\azure-event-hubs\c\external\qpid-proton\tmp\qpid_proton-cfgcmd.txt.in;C:\git\azure-event-hubs\c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/git/azure-event-hubs/c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/git/azure-event-hubs/c -BC:/git/azure-event-hubs/c/build --check-stamp-file C:\git\azure-event-hubs\c\build\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/CMakeLists.txt;C:\git\azure-event-hubs\c\CMakeLists.txt;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInitialize.cmake;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\Platform\Windows-MSVC.cmake;C:\git\azure-event-hubs\c\build\CMakeFiles\3.3.0\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\ExternalProject.cmake;C:\git\azure-event-hubs\c\cmake\version.cmake;C:\git\azure-event-hubs\c\cmake\compiler_options.cmake;C:\git\azure-event-hubs\c\cmake\dependencies.cmake;C:\git\azure-event-hubs\c\cmake\FindQPID_PROTON.cmake;C:\git\azure-event-hubs\c\cmake\build_qpid_proton_dependency.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindGit.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.3\Modules\RepositoryInfo.txt.in;C:\git\azure-event-hubs\c\external\qpid-proton\tmp\qpid_proton-cfgcmd.txt.in;C:\git\azure-event-hubs\c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Creating directories for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/build/qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/lib/qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Creating directories for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/build/qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/lib/qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Creating directories for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/build/qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/lib/qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Creating directories for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/build/qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/lib/qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/external/qpid-proton/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing download step (git clone) for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\external\qpid-proton\src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -P C:/git/azure-event-hubs/c/external/qpid-proton/tmp/qpid_proton-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-download.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\qpid_proton-gitinfo.txt;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing download step (git clone) for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\external\qpid-proton\src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -P C:/git/azure-event-hubs/c/external/qpid-proton/tmp/qpid_proton-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-download.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\qpid_proton-gitinfo.txt;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing download step (git clone) for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\external\qpid-proton\src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -P C:/git/azure-event-hubs/c/external/qpid-proton/tmp/qpid_proton-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-download.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\qpid_proton-gitinfo.txt;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing download step (git clone) for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\external\qpid-proton\src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -P C:/git/azure-event-hubs/c/external/qpid-proton/tmp/qpid_proton-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-download.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\qpid_proton-gitinfo.txt;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing update step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -P C:/git/azure-event-hubs/c/external/qpid-proton/tmp/qpid_proton-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-update.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing update step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -P C:/git/azure-event-hubs/c/external/qpid-proton/tmp/qpid_proton-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-update.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing update step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -P C:/git/azure-event-hubs/c/external/qpid-proton/tmp/qpid_proton-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-update.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing update step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -P C:/git/azure-event-hubs/c/external/qpid-proton/tmp/qpid_proton-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-update.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">No patch step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-patch.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">No patch step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-patch.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">No patch step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-patch.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">No patch step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-patch.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing configure step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE= -DCMAKE_INSTALL_PREFIX=C:/git/azure-event-hubs/c/lib/qpid-proton -DCMAKE_BINARY_DIR=C:/git/azure-event-hubs/c/build/qpid-proton "-GVisual Studio 14 2015" C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-configure.rule;C:\git\azure-event-hubs\c\external\qpid-proton\tmp\qpid_proton-cfgcmd.txt;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing configure step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE= -DCMAKE_INSTALL_PREFIX=C:/git/azure-event-hubs/c/lib/qpid-proton -DCMAKE_BINARY_DIR=C:/git/azure-event-hubs/c/build/qpid-proton "-GVisual Studio 14 2015" C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-configure.rule;C:\git\azure-event-hubs\c\external\qpid-proton\tmp\qpid_proton-cfgcmd.txt;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing configure step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE= -DCMAKE_INSTALL_PREFIX=C:/git/azure-event-hubs/c/lib/qpid-proton -DCMAKE_BINARY_DIR=C:/git/azure-event-hubs/c/build/qpid-proton "-GVisual Studio 14 2015" C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-configure.rule;C:\git\azure-event-hubs\c\external\qpid-proton\tmp\qpid_proton-cfgcmd.txt;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing configure step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE= -DCMAKE_INSTALL_PREFIX=C:/git/azure-event-hubs/c/lib/qpid-proton -DCMAKE_BINARY_DIR=C:/git/azure-event-hubs/c/build/qpid-proton "-GVisual Studio 14 2015" C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-configure.rule;C:\git\azure-event-hubs\c\external\qpid-proton\tmp\qpid_proton-cfgcmd.txt;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing build step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" --build . --config $(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-build.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing build step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" --build . --config $(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-build.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing build step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" --build . --config $(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-build.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing build step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" --build . --config $(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-build.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\dc6d13e40dea71a7f5afa800cc48f36c\qpid_proton-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing install step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" --build . --config $(Configuration) --target install
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-install.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing install step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" --build . --config $(Configuration) --target install
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-install.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing install step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" --build . --config $(Configuration) --target install
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-install.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing install step for 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\git\azure-event-hubs\c\build\qpid-proton
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" --build . --config $(Configuration) --target install
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/dc6d13e40dea71a7f5afa800cc48f36c/qpid_proton-install.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\9eb4980660d887b45a436ca5f56cc0d4\qpid_proton-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Completed 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/build/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/build/CMakeFiles/$(Configuration)/qpid_proton-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/9eb4980660d887b45a436ca5f56cc0d4/qpid_proton-complete.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\$(Configuration)\qpid_proton-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Completed 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/build/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/build/CMakeFiles/$(Configuration)/qpid_proton-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/9eb4980660d887b45a436ca5f56cc0d4/qpid_proton-complete.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\$(Configuration)\qpid_proton-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Completed 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/build/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/build/CMakeFiles/$(Configuration)/qpid_proton-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/9eb4980660d887b45a436ca5f56cc0d4/qpid_proton-complete.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\$(Configuration)\qpid_proton-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Completed 'qpid_proton'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E make_directory C:/git/azure-event-hubs/c/build/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/build/CMakeFiles/$(Configuration)/qpid_proton-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -E touch C:/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton-stamp/$(Configuration)/qpid_proton-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/9eb4980660d887b45a436ca5f56cc0d4/qpid_proton-complete.rule;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-mkdir;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-download;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-update;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-patch;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-configure;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-build;C:\git\azure-event-hubs\c\external\qpid-proton\src\qpid_proton-stamp\$(Configuration)\qpid_proton-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\$(Configuration)\qpid_proton-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\c0b3c0348c79af1a18fb1ffa9277d504\qpid_proton.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/c0b3c0348c79af1a18fb1ffa9277d504/qpid_proton.rule;C:\git\azure-event-hubs\c\build\CMakeFiles\$(Configuration)\qpid_proton-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\qpid_proton</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/c0b3c0348c79af1a18fb1ffa9277d504/qpid_proton.rule;C:\git\azure-event-hubs\c\build\CMakeFiles\$(Configuration)\qpid_proton-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\qpid_proton</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/c0b3c0348c79af1a18fb1ffa9277d504/qpid_proton.rule;C:\git\azure-event-hubs\c\build\CMakeFiles\$(Configuration)\qpid_proton-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\qpid_proton</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/git/azure-event-hubs/c/build/CMakeFiles/c0b3c0348c79af1a18fb1ffa9277d504/qpid_proton.rule;C:\git\azure-event-hubs\c\build\CMakeFiles\$(Configuration)\qpid_proton-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\git\azure-event-hubs\c\build\CMakeFiles\qpid_proton</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\git\azure-event-hubs\c\build\CMakeFiles\qpid_proton" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/git/azure-event-hubs/c/build/ZERO_CHECK.vcxproj">
+      <Project>901EA6BE-D93A-43F6-9AFD-36F4F3B8EC83</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

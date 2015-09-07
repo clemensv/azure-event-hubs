@@ -25,8 +25,12 @@ IN THE SOFTWARE.
 #include <threadapi.h>
 #include <crt_abstractions.h>
 
-static const char* connectionString = "Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=[key name];SharedAccessKey=[key value]";
-static const char* eventHubPath = "[event hub name]";
+//static const char* connectionString = "Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=[key name];SharedAccessKey=[key value]";
+//static const char* eventHubPath = "[event hub name]";
+
+static const char* connectionString = "Endpoint=sb://clemensveu.servicebus.windows.net/;SharedAccessKeyName=send;SharedAccessKey=IMHNHqULHi263Lb9KQYt6rFkbhv6iPjdwpZgZ1bFzTE=";
+static const char* eventHubPath = "testqueue";
+
 
 
 static bool g_bSendProperties = false;

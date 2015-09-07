@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\git\azure-event-hubs\c\testtools\eventhub_test\src\eventhub_account.c">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\testtools\eventhub_test\src\eventhub_testclient.c">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\git\azure-event-hubs\c\testtools\eventhub_test\inc\eventhub_account.h">
+      <Filter>Source Files\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\testtools\eventhub_test\inc\eventhub_testclient.h">
+      <Filter>Source Files\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\testtools\eventhub_test\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files\inc">
+      <UniqueIdentifier>{7F40E415-C9BB-47EB-B2B4-5E01E0BCB789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src">
+      <UniqueIdentifier>{E42A8A70-35DB-46DB-92CD-0D54BB7AB9FE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{785BD289-2079-405D-86CF-917D3509BAA6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

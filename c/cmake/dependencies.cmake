@@ -16,10 +16,6 @@ find_package(QPID_PROTON REQUIRED)
 if(QPID_PROTON_FOUND)
     include_directories(${QPID_PROTON_INCLUDE_DIR})
     list(APPEND ${PROJECT_NAME}_EXTERNAL_LIBRARIES "${QPID_PROTON_LIBRARY}")
-else(QPID_PROTON_FOUND)
-   include(build_qpid_proton_dependency)
-   include_directories(${EP_INSTALL}/qpid-proton/include)
-   list(APPEND ${PROJECT_NAME}_EXTERNAL_LIBRARIES "${EP_INSTALL}/qpid-proton/lib/libqpid-proton.dylib")   
 endif()
 
 

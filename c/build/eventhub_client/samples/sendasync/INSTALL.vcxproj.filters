@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\build\CMakeFiles\1c05f851b15127f04c32503533b8d32f\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{9CA48812-C1F0-419B-AF84-376934C4307B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

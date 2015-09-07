@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\adapters\httpapi_wininet.c">
+      <Filter>Source Files\..\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\adapters\lock_c11.c">
+      <Filter>Source Files\..\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\adapters\threadapi_win32.c">
+      <Filter>Source Files\..\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\base64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\buffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\crt_abstractions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\doublylinkedlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\gballoc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\httpheaders.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\map.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\string_tokenizer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\strings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\urlencode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\git\azure-event-hubs\c\common\src\vector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\base64.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\buffer_.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\crt_abstractions.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\doublylinkedlist.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\gballoc.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\httpapi.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\httpheaders.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\iot_logging.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\lock.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\macro_utils.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\map.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\string_tokenizer.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\strings.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\threadapi.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\urlencode.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\git\azure-event-hubs\c\common\inc\vector.h">
+      <Filter>Source Files\..\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\git\azure-event-hubs\c\common\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files\..\adapters">
+      <UniqueIdentifier>{D412DA95-258F-4FA6-ACCA-7B43E4B29516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\..\inc">
+      <UniqueIdentifier>{BFE27C1E-824F-470D-87AD-4C55BE3494A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{785BD289-2079-405D-86CF-917D3509BAA6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\..">
+      <UniqueIdentifier>{1101376E-F3AE-4879-8091-4C2B2DC67E56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
