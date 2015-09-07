@@ -21,14 +21,14 @@ IN THE SOFTWARE.
 #ifdef _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
 #endif
-#include "gballoc.h"
+#include <gballoc.h>
 
-#include "eventhubclient.h"
-#include "iot_logging.h"
-#include "version.h"
-#include "threadapi.h"
-#include "crt_abstractions.h"
-#include "lock.h"
+#include <eventhubclient.h>
+#include <iot_logging.h>
+#include <version.h>
+#include <threadapi.h>
+#include <crt_abstractions.h>
+#include <lock.h>
 #include <signal.h>
 
 
@@ -52,6 +52,8 @@ typedef struct EVENTHUB_CALLBACK_STRUCT_TAG
 {
     volatile sig_atomic_t callbackStatus;
     EVENTHUBCLIENT_CONFIRMATION_RESULT confirmationResult;
+    LOCK_HANDLE completionLock;
+    COND_HANDLE completionCondition;
 } EVENTHUB_CALLBACK_STRUCT;
 
 static int EventhubClientThread(void* userContextCallback)
@@ -77,8 +79,9 @@ static void EventhubClientLLCallback(EVENTHUBCLIENT_CONFIRMATION_RESULT result, 
     if (userContextCallback != NULL)
     {
         EVENTHUB_CALLBACK_STRUCT* callbackInfo = (EVENTHUB_CALLBACK_STRUCT*)userContextCallback;
-        callbackInfo->callbackStatus = CALLBACK_NOTIFIED;
         callbackInfo->confirmationResult = result;
+        callbackInfo->callbackStatus = CALLBACK_NOTIFIED;
+        Condition_Post(callbackInfo->completionCondition);
     }
 }
 
@@ -229,6 +232,28 @@ EVENTHUBCLIENT_HANDLE EventHubClient_CreateFromConnectionString(const char* conn
     return (EVENTHUBCLIENT_LL_HANDLE)result;
 }
 
+EVENTHUB_CALLBACK_STRUCT * EventHubClient_InitUserContext()
+{
+    EVENTHUB_CALLBACK_STRUCT* eventhubUserContext = malloc(sizeof(EVENTHUB_CALLBACK_STRUCT) );
+    if ( eventhubUserContext != NULL)
+    {
+        eventhubUserContext->callbackStatus = CALLBACK_WAITING;
+        eventhubUserContext->confirmationResult = -1;
+        // init and set the lock. completion unlocks
+        eventhubUserContext->completionLock = Lock_Init();
+        Lock(eventhubUserContext->completionLock);
+        eventhubUserContext->completionCondition = Condition_Init();
+    }
+    return eventhubUserContext;
+}
+
+void EventHub_DestroyUserContext(EVENTHUB_CALLBACK_STRUCT * eventhubUserContext)
+{
+    Lock_Deinit(eventhubUserContext->completionLock);
+    Condition_Deinit(eventhubUserContext->completionCondition);
+    free(eventhubUserContext);
+}
+
 EVENTHUBCLIENT_RESULT EventHubClient_Send(EVENTHUBCLIENT_HANDLE eventHubHandle, EVENTDATA_HANDLE eventDataHandle)
 {
     EVENTHUBCLIENT_RESULT result;
@@ -242,7 +267,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_Send(EVENTHUBCLIENT_HANDLE eventHubHandle, 
     else
     {
         EVENTHUBCLIENT_STRUCT* eventhubClientInfo = (EVENTHUBCLIENT_STRUCT*)eventHubHandle;
-        EVENTHUB_CALLBACK_STRUCT* eventhubUserContext = malloc(sizeof(EVENTHUB_CALLBACK_STRUCT) );
+        EVENTHUB_CALLBACK_STRUCT* eventhubUserContext = EventHubClient_InitUserContext();
         if (eventhubUserContext == NULL)
         {
             /* Codes_SRS_EVENTHUBCLIENT_03_009: [EventHubClient_Send shall return EVENTHUBCLIENT_ERROR on any failure that is encountered..] */
@@ -251,15 +276,11 @@ EVENTHUBCLIENT_RESULT EventHubClient_Send(EVENTHUBCLIENT_HANDLE eventHubHandle, 
         }
         else
         {
-            eventhubUserContext->callbackStatus = CALLBACK_WAITING;
             /* Codes_SRS_EVENTHUBCLIENT_03_008: [EventHubClient_Send shall call into the Execute_LowerLayerSendAsync function to send the eventDataHandle parameter to the EventHub.] */
             if (Execute_LowerLayerSendAsync(eventhubClientInfo, eventDataHandle, EventhubClientLLCallback, eventhubUserContext) == 0)
             {
-                /* Codes_SRS_EVENTHUBCLIENT_03_010: [Upon success of Execute_LowerLayerSendAsync, then EventHubClient_Send wait until the EVENTHUB_CALLBACK_STRUCT callbackStatus variable is set to CALLBACK_NOTIFIED.] */
-                while (eventhubUserContext->callbackStatus == CALLBACK_WAITING)
-                {
-                    ThreadAPI_Sleep(EVENTHUB_SEND_SLEEP_TIME);
-                }
+                // we're going to wait for the condition being true
+                Condition_Wait(eventhubUserContext->completionCondition, eventhubUserContext->completionLock, 0);
 
                 /* Codes_SRS_EVENTHUBCLIENT_07_012: [EventHubClient_Send shall return EVENTHUBCLIENT_ERROR.] */
                 if (eventhubUserContext->confirmationResult == EVENTHUBCLIENT_CONFIRMATION_OK)
@@ -280,7 +301,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_Send(EVENTHUBCLIENT_HANDLE eventHubHandle, 
                 result = EVENTHUBCLIENT_ERROR;
                 LOG_ERROR(result);
             }
-            free(eventhubUserContext);
+            EventHub_DestroyUserContext(eventhubUserContext);
         }
     }
     return result;
@@ -338,11 +359,8 @@ EVENTHUBCLIENT_RESULT EventHubClient_SendBatch(EVENTHUBCLIENT_LL_HANDLE eventHub
             /* Codes_SRS_EVENTHUBCLIENT_07_051: [EventHubClient_SendBatch shall call into the Execute_LowerLayerSendBatchAsync function to send the eventDataHandle parameter to the EventHub.] */
             if (Execute_LowerLayerSendBatchAsync(eventhubClientInfo, eventDataList, count, EventhubClientLLCallback, eventhubUserContext) == 0)
             {
-                /* Codes_SRS_EVENTHUBCLIENT_07_053: [Upon success of Execute_LowerLayerSendBatchAsync, then EventHubClient_SendBatch shall wait until the EVENTHUB_CALLBACK_STRUCT callbackStatus variable is set to CALLBACK_NOTIFIED.] */
-                while (eventhubUserContext->callbackStatus == CALLBACK_WAITING)
-                {
-                    ThreadAPI_Sleep(EVENTHUB_SEND_SLEEP_TIME);
-                }
+                // we're going to wait for the condition being true
+                Condition_Wait(eventhubUserContext->completionCondition, eventhubUserContext->completionLock, 0);
 
                 if (eventhubUserContext->confirmationResult == EVENTHUBCLIENT_CONFIRMATION_OK)
                 {
@@ -362,7 +380,7 @@ EVENTHUBCLIENT_RESULT EventHubClient_SendBatch(EVENTHUBCLIENT_LL_HANDLE eventHub
                 result = EVENTHUBCLIENT_ERROR;
                 LOG_ERROR(result);
             }
-            free(eventhubUserContext);
+            EventHub_DestroyUserContext(eventhubUserContext);
         }
     }
     return result;
