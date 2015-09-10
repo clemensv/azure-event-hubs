@@ -33,12 +33,12 @@ set_target_properties(eventhubclient_e2etest PROPERTIES LINKER_LANGUAGE CXX)
 
 IF (${CMAKE_MAJOR_VERSION} LESS 3 )
   set( micromock ${micromock_location})
-  set( libctest ${ctest_location})
+  set( ctest ${ctest_location})
   set( libcommon ${eventhub_common_location})
   set( libclient ${eventhub_client_location})
 ELSE()
   set(micromock  $<TARGET_FILE:micromock>) 
-  set(libctest  $<TARGET_FILE:libctest>)
+  set(ctest  $<TARGET_FILE:ctest>)
   set(libcommon  $<TARGET_FILE:eventhub_common>) 
   set(libclient  $<TARGET_FILE:eventhub_client>) 
 ENDIF()
@@ -47,7 +47,7 @@ ENDIF()
 # Libraries to link in reverse order because that's what ld requires.
 target_link_libraries (eventhubclient_e2etest
     ${micromock}  
-	  ${libctest}
+	  ${ctest}
     ${libcommon}  
 	${libclient}  
     ${CMAKE_THREAD_LIBS_INIT}

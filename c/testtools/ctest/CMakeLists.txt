@@ -18,9 +18,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../ctest/inc)
 
 find_package(Threads REQUIRED)
 
-add_library(libctest STATIC ${CTEST_SOURCES})
+add_library(ctest STATIC ${CTEST_SOURCES})
 
-target_link_libraries (libctest ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries (ctest ${CMAKE_THREAD_LIBS_INIT})
 
 IF (${CMAKE_MAJOR_VERSION} LESS 3 )
    GET_PROPERTY(ctest_location_prop TARGET CTEST PROPERTY LOCATION)
@@ -28,9 +28,9 @@ IF (${CMAKE_MAJOR_VERSION} LESS 3 )
 ENDIF()
 
 
-add_dependencies(core libctest)
+add_dependencies(core ctest)
 
-install (TARGETS libctest 
+install (TARGETS ctest 
                ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
                LIBRARY DESTINATION ${LIB_INSTALL_DIR})
  

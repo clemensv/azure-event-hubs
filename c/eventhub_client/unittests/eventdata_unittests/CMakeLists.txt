@@ -32,11 +32,11 @@ set_target_properties(eventdata_unittest PROPERTIES LINKER_LANGUAGE CXX)
 
 IF (${CMAKE_MAJOR_VERSION} LESS 3 )
   set( micromock ${micromock_location})
-  set( libctest ${ctest_location})
+  set( ctest ${ctest_location})
   set( libcommon ${eventhub_common_location})
 ELSE()
   set(micromock  $<TARGET_FILE:micromock>) 
-  set(libctest  $<TARGET_FILE:libctest>)
+  set(ctest  $<TARGET_FILE:ctest>)
   set(libcommon  $<TARGET_FILE:eventhub_common>) 
 ENDIF()
 
@@ -44,7 +44,7 @@ ENDIF()
 # Libraries to link in reverse order because that's what ld requires.
 target_link_libraries (eventdata_unittest
 	${micromock}  
-	${libctest}
+	${ctest}
   ${libcommon}  
     ${CMAKE_THREAD_LIBS_INIT}
     ${${PROJECT_NAME}_EXTERNAL_LIBRARIES}
@@ -53,5 +53,4 @@ target_link_libraries (eventdata_unittest
 
 add_test(eventdata_unittest eventdata_unittest)
 
-add_dependencies(eventdata_unittest micromock)
-add_dependencies(samples eventdata_unittest)
+add_dependencies(eventdata_unittest micromock ctest)
