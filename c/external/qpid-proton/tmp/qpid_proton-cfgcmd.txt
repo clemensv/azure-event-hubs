@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DCMAKE_BUILD_TYPE=;-DCMAKE_INSTALL_PREFIX=/opt/git/azure-event-hubs/c/lib/qpid-proton;-DCMAKE_BINARY_DIR=/opt/git/azure-event-hubs/c/build/qpid-proton;-GUnix Makefiles;/opt/git/azure-event-hubs/c/external/qpid-proton/src/qpid_proton'

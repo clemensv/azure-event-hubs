@@ -3,6 +3,9 @@
 #
 
 add_definitions(-DUSE_CTEST)
+IF (NOT WIN32)
+  add_definitions(-std=c++11)
+ENDIF()
 
 file(GLOB_RECURSE MICROMOCK_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h
@@ -15,12 +18,13 @@ create_source_group("Source Files" "${CMAKE_CURRENT_SOURCE_DIR}/src" ${MICROMOCK
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../testrunnerswitcher/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../ctest/inc)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../sal/inc)
 
 find_package(Threads REQUIRED)
 
-add_library(libmicromock STATIC ${MICROMOCK_SOURCES})
+add_library(micromock STATIC ${MICROMOCK_SOURCES})
 
-target_link_libraries (libmicromock ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries (micromock ${CMAKE_THREAD_LIBS_INIT})
 
 IF (${CMAKE_MAJOR_VERSION} LESS 3 )
    GET_PROPERTY(micromock_location_prop TARGET MICROMOCK PROPERTY LOCATION)
@@ -28,9 +32,9 @@ IF (${CMAKE_MAJOR_VERSION} LESS 3 )
 ENDIF()
 
 
-add_dependencies(core libmicromock)
+add_dependencies(core micromock)
 
-install (TARGETS libmicromock 
+install (TARGETS micromock
                ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
                LIBRARY DESTINATION ${LIB_INSTALL_DIR})
  

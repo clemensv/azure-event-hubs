@@ -2,6 +2,11 @@
 # ----------------------------------------
 # Micromock generator
 # ----------------------------------------
+
+IF (WIN32)
+
+# only builds on Windows
+
 file(GLOB_RECURSE MICROMOCKGENERATOR_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
@@ -14,19 +19,20 @@ find_package(Threads REQUIRED)
 add_executable (micromockgenerator ${MICROMOCKGENERATOR_SOURCES})
 
 IF (${CMAKE_MAJOR_VERSION} LESS 3 )
-  set( libmicromock ${micromock_location})
+  set( micromock ${micromock_location})
 ELSE()
-  set(libmicromock  $<TARGET_FILE:libmicromock>) 
+  set(micromock  $<TARGET_FILE:micromock>) 
 ENDIF()
 
 
 # Libraries to link in reverse order because that's what ld requires.
 target_link_libraries (micromockgenerator
-    ${libmicromock}  
+    ${micromock}  
     ${CMAKE_THREAD_LIBS_INIT}
     ${${PROJECT_NAME}_EXTERNAL_LIBRARIES}
     )
   
 
-add_dependencies(micromockgenerator libmicromock)
+add_dependencies(micromockgenerator micromock)
 add_dependencies(samples micromockgenerator)
+ENDIF()

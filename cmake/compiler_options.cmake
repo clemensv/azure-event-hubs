@@ -1,7 +1,5 @@
 IF (NOT WIN32)
-	add_definitions(-std=c99)
-	add_definitions(-pedantic)
-	add_definitions(-Wall)
-	add_definitions(-w)
+  set(CMAKE_C_FLAGS "-std=c99 -pedantic -Wall -w")
+  set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++ -pedantic -Wall -w")
 ENDIF()
 

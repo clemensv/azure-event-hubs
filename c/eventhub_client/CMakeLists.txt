@@ -8,6 +8,8 @@ file(GLOB_RECURSE EVENTHUB_CLIENT_SOURCES
 
 list(SORT EVENTHUB_CLIENT_SOURCES)
 create_source_group("Source Files" "${CMAKE_CURRENT_SOURCE_DIR}/src/" ${EVENTHUB_CLIENT_SOURCES})
+set_source_files_properties(EVENTHUB_CLIENT_UNITTEST_SOURCES PROPERTIES LANGUAGE CXX)
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../common/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
 

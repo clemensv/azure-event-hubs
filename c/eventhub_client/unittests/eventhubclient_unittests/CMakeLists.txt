@@ -5,6 +5,7 @@
 add_definitions(-DUSE_CTEST)
 add_definitions(-DPROTON_DECLARE_STATIC)
 
+
 file(GLOB_RECURSE EVENTHUBCLIENT_UNITTEST_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/*.c
@@ -16,19 +17,21 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../testtools/testrunnerswitcher/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../testtools/micromock/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../testtools/ctest/inc)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../testtools/sal/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../common/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../common/src)
 
 find_package(Threads REQUIRED)
 
 add_executable (eventhubclient_unittest ${EVENTHUBCLIENT_UNITTEST_SOURCES})
+set_target_properties(eventhubclient_unittest PROPERTIES LINKER_LANGUAGE CXX)
 
 IF (${CMAKE_MAJOR_VERSION} LESS 3 )
-  set( libmicromock ${micromock_location})
+  set( micromock ${micromock_location})
   set( libctest ${ctest_location})
   set( libcommon ${eventhub_common_location})
 ELSE()
-  set(libmicromock  $<TARGET_FILE:libmicromock>) 
+  set(micromock  $<TARGET_FILE:micromock>)
   set(libctest  $<TARGET_FILE:libctest>)
   set(libcommon  $<TARGET_FILE:eventhub_common>) 
 ENDIF()
@@ -36,7 +39,7 @@ ENDIF()
 
 # Libraries to link in reverse order because that's what ld requires.
 target_link_libraries (eventhubclient_unittest
-    ${libmicromock}  
+    ${micromock}  
     ${libctest}
     $(libcommon)  
     ${CMAKE_THREAD_LIBS_INIT}
@@ -44,5 +47,5 @@ target_link_libraries (eventhubclient_unittest
 
 add_test(eventdata_unittest eventhubclient_unittest)
 
-add_dependencies(eventhubclient_unittest libmicromock)
+add_dependencies(eventhubclient_unittest micromock)
 add_dependencies(samples eventhubclient_unittest)

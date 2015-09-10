@@ -27,11 +27,19 @@ IN THE SOFTWARE.
 #include "targetver.h"
 
 #include "stdio.h"
+#ifdef _WIN32_WINNT
 #include "tchar.h"
+#else
+#define _T(x) x
+#define TCHAR char
+#define UINT unsigned int
+#endif
 #include "string"
 #include "sstream"
 
+#ifdef _WIN32_WINNT
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif // WIN32_LEAN_AND_MEAN
 #include "windows.h"
+#endif
