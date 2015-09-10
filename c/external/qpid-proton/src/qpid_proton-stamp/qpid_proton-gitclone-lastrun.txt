@@ -1,3 +1,0 @@
-repository='https://github.com/apache/qpid-proton.git'
-module=''
-tag=''
