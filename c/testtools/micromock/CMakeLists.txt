@@ -3,9 +3,6 @@
 #
 
 add_definitions(-DUSE_CTEST)
-IF (NOT WIN32)
-  add_definitions(-std=c++11)
-ENDIF()
 
 file(GLOB_RECURSE MICROMOCK_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h
@@ -18,7 +15,9 @@ create_source_group("Source Files" "${CMAKE_CURRENT_SOURCE_DIR}/src" ${MICROMOCK
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../testrunnerswitcher/inc)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../ctest/inc)
+IF (NOT MSVC)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../sal/inc)
+ENDIF()
 
 find_package(Threads REQUIRED)
 

@@ -3,7 +3,7 @@
 # Micromock generator
 # ----------------------------------------
 
-IF (WIN32)
+IF (MSVC)
 
 # only builds on Windows
 
@@ -17,6 +17,7 @@ create_source_group("Source Files" "${CMAKE_CURRENT_SOURCE_DIR}" ${MICROMOCKGENE
 find_package(Threads REQUIRED)
 
 add_executable (micromockgenerator ${MICROMOCKGENERATOR_SOURCES})
+set_target_properties(micromockgenerator PROPERTIES LINKER_LANGUAGE CXX)
 
 IF (${CMAKE_MAJOR_VERSION} LESS 3 )
   set( micromock ${micromock_location})

@@ -2,11 +2,11 @@
 # eventhub_common
 #
 
-IF(WIN32)
+IF(MSVC)
 	file(GLOB_RECURSE EVENTHUB_COMMON_SOURCES
 		${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h
 		${CMAKE_CURRENT_SOURCE_DIR}/src/*.c
-		${CMAKE_CURRENT_SOURCE_DIR}/adapters/threadapi_win32.c 
+		${CMAKE_CURRENT_SOURCE_DIR}/adapters/threadapi_c11.c 
 		${CMAKE_CURRENT_SOURCE_DIR}/adapters/httpapi_wininet.c 
 		${CMAKE_CURRENT_SOURCE_DIR}/adapters/lock_c11.c)
 ELSE()
