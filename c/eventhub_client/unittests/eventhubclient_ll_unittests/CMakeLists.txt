@@ -4,6 +4,8 @@
 # ----------------------------------------
 add_definitions(-DUSE_CTEST)
 add_definitions(-DPROTON_DECLARE_STATIC)
+add_definitions(-DGB_DEBUG_ALLOC)
+add_definitions(-DGB_MEASURE_MEMORY_FOR_THIS)
 
 file(GLOB_RECURSE EVENTHUBCLIENT_LL_UNITTEST_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp

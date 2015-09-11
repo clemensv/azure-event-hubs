@@ -4,6 +4,9 @@
 # ----------------------------------------
 
 add_definitions(-DUSE_CTEST)
+add_definitions(-DGB_DEBUG_ALLOC)
+add_definitions(-DGB_MEASURE_MEMORY_FOR_THIS)
+
 
 
 file(GLOB_RECURSE EVENTHUBCLIENT_E2ETEST_SOURCES
