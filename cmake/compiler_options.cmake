@@ -1,4 +1,4 @@
-if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   set(CMAKE_C_FLAGS "-std=c99 -pedantic -Wall -w")
   set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++ -pedantic -Wall -w")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
