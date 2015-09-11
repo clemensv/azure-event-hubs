@@ -34,13 +34,13 @@ set_target_properties(eventhubclient_e2etest PROPERTIES LINKER_LANGUAGE CXX)
 IF (${CMAKE_MAJOR_VERSION} LESS 3 )
   set( micromock ${micromock_location})
   set( ctest ${ctest_location})
-  set( libcommon ${eventhub_common_location})
-  set( libclient ${eventhub_client_location})
+  set( eventhub_common ${eventhub_common_location})
+  set( eventhub_client ${eventhub_client_location})
 ELSE()
   set(micromock  $<TARGET_FILE:micromock>) 
   set(ctest  $<TARGET_FILE:ctest>)
-  set(libcommon  $<TARGET_FILE:eventhub_common>) 
-  set(libclient  $<TARGET_FILE:eventhub_client>) 
+  set(eventhub_common  $<TARGET_FILE:eventhub_common>) 
+  set(eventhub_client  $<TARGET_FILE:eventhub_client>) 
 ENDIF()
 
 
@@ -48,13 +48,13 @@ ENDIF()
 target_link_libraries (eventhubclient_e2etest
     ${micromock}  
 	  ${ctest}
-    ${libcommon}  
-	${libclient}  
+    ${eventhub_client}  
+	${eventhub_common}  
     ${CMAKE_THREAD_LIBS_INIT}
     ${${PROJECT_NAME}_EXTERNAL_LIBRARIES}
     )
   
 add_test(eventhubclient_e2etest eventhubclient_e2etest)
 
-add_dependencies(eventhubclient_e2etest micromock)
-add_dependencies(samples eventhubclient_e2etest)
+add_dependencies(eventhubclient_e2etest micromock ctest eventhub_common eventhub_client)
+
