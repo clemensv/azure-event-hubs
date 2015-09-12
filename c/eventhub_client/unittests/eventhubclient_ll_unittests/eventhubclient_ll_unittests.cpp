@@ -271,6 +271,9 @@ public:
     MOCK_STATIC_METHOD_2(, int, pn_messenger_set_outgoing_window, pn_messenger_t*, messenger, int, window)
     MOCK_METHOD_END(int, 0)
 
+    MOCK_STATIC_METHOD_2(, int, pn_messenger_set_allowed_sasl_mechanisms, pn_messenger_t*, messenger, const char *, mechs)
+    MOCK_METHOD_END(int,0)
+
     MOCK_STATIC_METHOD_2(, pn_status_t, pn_messenger_status, pn_messenger_t*, messenger, pn_tracker_t, tracker)
     MOCK_METHOD_END(pn_status_t, PN_STATUS_ACCEPTED)
 
@@ -541,6 +544,7 @@ DECLARE_GLOBAL_MOCK_METHOD_1(CEventHubClientLLMocks, , pn_data_t*, pn_data, size
 DECLARE_GLOBAL_MOCK_METHOD_3(CEventHubClientLLMocks, , ssize_t, pn_data_encode, pn_data_t *, data, char *, bytes, size_t, size);
 DECLARE_GLOBAL_MOCK_METHOD_1(CEventHubClientLLMocks, , void, pn_data_free, pn_data_t*, data);
 DECLARE_GLOBAL_MOCK_METHOD_2(CEventHubClientLLMocks, , int, pn_messenger_set_outgoing_window, pn_messenger_t*, messenger, int, window);
+DECLARE_GLOBAL_MOCK_METHOD_2(CEventHubClientLLMocks, , int, pn_messenger_set_allowed_sasl_mechanisms, pn_messenger_t*, messenger, const char *, mechs)
 DECLARE_GLOBAL_MOCK_METHOD_2(CEventHubClientLLMocks, , pn_status_t, pn_messenger_status, pn_messenger_t*, messenger, pn_tracker_t, tracker);
 DECLARE_GLOBAL_MOCK_METHOD_1(CEventHubClientLLMocks, , pn_tracker_t, pn_messenger_outgoing_tracker, pn_messenger_t*, messenger);
 DECLARE_GLOBAL_MOCK_METHOD_3(CEventHubClientLLMocks, , int, pn_messenger_settle, pn_messenger_t *, messenger, pn_tracker_t, tracker, int, flags);

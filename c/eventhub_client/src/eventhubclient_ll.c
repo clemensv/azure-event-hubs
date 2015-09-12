@@ -425,6 +425,14 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             clearehLLStruct = true;
             LogError("pn_messenger failed.\r\n");
         }
+//#ifdef PROTON_SASL_OVERRIDE
+        else if ( pn_messenger_set_allowed_sasl_mechanisms(ehLLStruct->messenger, "PLAIN") != 0)
+        {
+            /* Codes_SRS_EVENTHUBCLIENT_LL_03_039: [EventHubClient_ CreateFromConnectionString shall return EVENTHUBCLIENT_ERROR if it fails to create a proton messenger.] */
+            clearehLLStruct = true;
+            LogError("pn_messenger failed.\r\n");
+        }
+ //#endif
         /* Codes_SRS_EVENTHUBCLIENT_LL_04_001: [EventHubClient_LL_CreateFromConnectionString shall call pn_messenger_set_outgoing_window so it can get the status of the message sent] */
         else if (pn_messenger_set_outgoing_window(ehLLStruct->messenger, OUTGOING_WINDOW_SIZE) != 0)
         {
