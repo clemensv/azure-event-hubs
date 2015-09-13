@@ -442,7 +442,7 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
             LogError("pn_messenger_set_outgoing_window failed.\r\n");
         }
         /* Codes_SRS_EVENTHUBCLIENT_LL_04_010: [EventHubClient_LL_CreateFromConnectionString shall setup the global messenger to be blocking via a call to pn_messenger_set_blocking.] */
-        else if (pn_messenger_set_blocking(ehLLStruct->messenger, false) != 0)
+        else if (pn_messenger_set_blocking(ehLLStruct->messenger, true) != 0)
         {
             /* Codes_SRS_EVENTHUBCLIENT_LL_03_033: [EventHubClient_LL_Send shall return EVENTHUBCLIENT_ERROR for any error encountered while invoking messenger functionalities.] */
             pn_messenger_free(ehLLStruct->messenger);
