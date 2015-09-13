@@ -25,11 +25,8 @@ IN THE SOFTWARE.
 #include "threadapi.h"
 #include "crt_abstractions.h"
 
-//static const char* connectionString = "Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=[key name];SharedAccessKey=[key value]";
-//static const char* eventHubPath = "[event hub name]";
-
-static const char * connectionString = "Endpoint=sb://myairspaceweu.servicebus.windows.net/;SharedAccessKeyName=send;SharedAccessKey=DIvk8/YPPedidMJ9gY3vbaEyREUSO/P5t7NaG7nUDDM=";
-static const char* eventHubPath = "myairspace";
+static const char* connectionString = "Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=[key name];SharedAccessKey=[key value]";
+static const char* eventHubPath = "[event hub name]";
 
 static bool g_bSendProperties = false;
 static bool g_bSendPartitionKey = false;
