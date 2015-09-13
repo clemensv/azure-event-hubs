@@ -8,9 +8,10 @@ add_definitions(-DGB_DEBUG_ALLOC)
 add_definitions(-DGB_MEASURE_MEMORY_FOR_THIS)
 
 file(GLOB_RECURSE EVENTHUBCLIENT_LL_UNITTEST_SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
+#    ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/*.c
-	${CMAKE_CURRENT_SOURCE_DIR}/../../src/eventhubclient_ll.c)
+#	${CMAKE_CURRENT_SOURCE_DIR}/../../src/eventhubclient_ll.c)
+)
 
 list(SORT EVENTHUBCLIENT_LL_UNITTEST_SOURCES)
 create_source_group("Source Files" "${CMAKE_CURRENT_SOURCE_DIR}" ${EVENTHUBCLIENT_LL_UNITTEST_SOURCES})
@@ -48,7 +49,7 @@ ENDIF()
 target_link_libraries (eventhubclient_ll_unittest
     ${micromock}  
     ${ctest}
-    ${eventhub_common}  
+    ${eventhub_common}
     ${CMAKE_THREAD_LIBS_INIT}
     )
   

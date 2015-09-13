@@ -25,18 +25,19 @@ IN THE SOFTWARE.
 
 #include <string.h>
 #include "eventhubclient_ll.h"
-#include "iot_logging.h"
-#include "strings.h"
-#include "string_tokenizer.h"
-#include "urlencode.h"
-#include "version.h"
-#include "crt_abstractions.h"
+#include <iot_logging.h>
+#include <strings.h>
+#include <string_tokenizer.h>
+#include <urlencode.h>
+#include <version.h>
+#include <crt_abstractions.h>
+#include <lock.h>
 
-#include "proton/message.h"
-#include "proton/messenger.h"
-#include "proton/codec.h"
+#include <proton/message.h>
+#include <proton/messenger.h>
+#include <proton/codec.h>
 
-#include "doublylinkedlist.h"
+#include <doublylinkedlist.h>
 
 #define LOG_ERROR LogError("result = %s\r\n", ENUM_TO_STRING(EVENTHUBCLIENT_RESULT, result));
 DEFINE_ENUM_STRINGS(EVENTHUBCLIENT_RESULT, EVENTHUBCLIENT_RESULT_VALUES)
@@ -76,8 +77,12 @@ typedef struct EVENTHUBCLIENT_LL_STRUCT_TAG
     STRING_HANDLE amqpAddressStringHandle;
     pn_messenger_t* messenger;
     pn_message_t* message;
-    size_t currentNumberOfMessageWaitingForAck;
+    size_t currentNumberOfMessagesWaitingForAck;
+    size_t currentNumberOfMessagesPendingSend;
     DLIST_ENTRY outgoingEvents;
+    LOCK_HANDLE outgoingEventsLock;
+    COND_HANDLE outgoingEventAvailable;
+    LOCK_HANDLE outgoingEventAvailableLock;
 } EVENTHUBCLIENT_LL_STRUCT;
 
 static const char ENDPOINT_SUBSTRING[] = "Endpoint=sb://";
@@ -322,12 +327,17 @@ EVENTHUBCLIENT_LL_HANDLE EventHubClient_LL_CreateFromConnectionString(const char
     {
         bool clearehLLStruct = false;
         DList_InitializeListHead(&(ehLLStruct->outgoingEvents));
+        ehLLStruct->outgoingEventsLock = Lock_Init();
+        ehLLStruct->outgoingEventAvailable = Condition_Init();
+        ehLLStruct->outgoingEventAvailableLock = Lock_Init();
+        Lock(ehLLStruct->outgoingEventAvailableLock);
         ehLLStruct->keyName = NULL;
         ehLLStruct->keyValue = NULL;
         ehLLStruct->namespace = NULL;
         ehLLStruct->eventHubpath = NULL;
         ehLLStruct->amqpAddressStringHandle = NULL;
-        ehLLStruct->currentNumberOfMessageWaitingForAck = 0;
+        ehLLStruct->currentNumberOfMessagesWaitingForAck = 0;
+        ehLLStruct->currentNumberOfMessagesPendingSend = 0;
 
         if ((namespaceStringHandle = STRING_clone(tokenString)) == NULL)
         {
@@ -731,7 +741,7 @@ void EventHubClient_LL_Destroy(EVENTHUBCLIENT_LL_HANDLE eventHubClientLLHandle)
     if (eventHubClientLLHandle != NULL)
     {
         
-		PDLIST_ENTRY unsend;
+		PDLIST_ENTRY unsent;
         /* Codes_SRS_EVENTHUBCLIENT_LL_03_009: [EventHubClient_LL_Destroy shall terminate the usage of this EventHubClient specified by the eventHubClientLLHandle and cleanup all associated resources.] */
         EVENTHUBCLIENT_LL_STRUCT* ehLLStruct = (EVENTHUBCLIENT_LL_STRUCT*)eventHubClientLLHandle;
         
@@ -740,6 +750,10 @@ void EventHubClient_LL_Destroy(EVENTHUBCLIENT_LL_HANDLE eventHubClientLLHandle)
 		{
 			LogError("Error trying to stop the messenger.\r\n");
 		}
+        
+        /* SRS_EVENTHUBCLIENT_LL_03_040: [EventHubClient_LL_Destroy shall clean the messenger resource via a call to pn_messenger_free.] */
+        pn_messenger_free(ehLLStruct->messenger);
+        pn_message_free(ehLLStruct->message);
 		
 		STRING_delete(ehLLStruct->keyName);
         STRING_delete(ehLLStruct->keyValue);
@@ -748,9 +762,20 @@ void EventHubClient_LL_Destroy(EVENTHUBCLIENT_LL_HANDLE eventHubClientLLHandle)
         STRING_delete(ehLLStruct->amqpAddressStringHandle);
 
         /* Codes_SRS_EVENTHUBCLIENT_LL_04_017: [EventHubClient_LL_Destroy shall complete all the event notifications callbacks that are in the outgoingdestroy the outgoingEvents with the result EVENTHUBCLIENT_CONFIRMATION_DESTROY.] */
-        while ((unsend = DList_RemoveHeadList(&(ehLLStruct->outgoingEvents))) != &(ehLLStruct->outgoingEvents))
+        while (1)
         {
-            EVENTHUB_EVENT_LIST* temp = containingRecord(unsend, EVENTHUB_EVENT_LIST, entry);
+            Lock(ehLLStruct->outgoingEventsLock);
+            unsent = DList_RemoveHeadList(&(ehLLStruct->outgoingEvents));
+            int breakOut =( unsent == &(ehLLStruct->outgoingEvents));
+            Unlock(ehLLStruct->outgoingEventsLock);
+            if ( breakOut )
+            {
+                // terminate at head of the list
+                break;
+            }
+           
+            
+            EVENTHUB_EVENT_LIST* temp = containingRecord(unsent, EVENTHUB_EVENT_LIST, entry);
             if (temp->callback != NULL)
             {
                 temp->callback(EVENTHUBCLIENT_CONFIRMATION_DESTROY, temp->context);
@@ -764,13 +789,11 @@ void EventHubClient_LL_Destroy(EVENTHUBCLIENT_LL_HANDLE eventHubClientLLHandle)
             free(temp);
         }
 
+        Lock_Deinit(ehLLStruct->outgoingEventsLock);
+
         
 
-        /* SRS_EVENTHUBCLIENT_LL_03_040: [EventHubClient_LL_Destroy shall clean the messenger resource via a call to pn_messenger_free.] */
-        pn_messenger_free(ehLLStruct->messenger);
-
-        pn_message_free(ehLLStruct->message);
-
+        
         free(ehLLStruct);
     }
 }
@@ -822,7 +845,12 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendAsync(EVENTHUBCLIENT_LL_HANDLE event
                     /* Codes_SRS_EVENTHUBCLIENT_LL_04_013: [EventHubClient_LL_SendAsync shall add the DLIST outgoingEvents a new record cloning the information from eventDataHandle, telemetryConfirmationCallback and userContextCallBack.] */
                     newEntry->callback = sendAsyncConfirmationCallback;
                     newEntry->context = userContextCallback;
+                    Lock(ehClientLLData->outgoingEventsLock);
+                    ehClientLLData->currentNumberOfMessagesPendingSend++;
                     DList_InsertTailList(&(ehClientLLData->outgoingEvents), &(newEntry->entry));
+                    Condition_Post(ehClientLLData->outgoingEventAvailable);
+                    Unlock(ehClientLLData->outgoingEventsLock);
+                    
                     /* Codes_SRS_EVENTHUBCLIENT_LL_04_015: [Otherwise EventHubClient_LL_SendAsync shall succeed and return EVENTHUBCLIENT_OK.] */
                     result = EVENTHUBCLIENT_OK;
                 }
@@ -898,7 +926,11 @@ EVENTHUBCLIENT_RESULT EventHubClient_LL_SendBatchAsync(EVENTHUBCLIENT_LL_HANDLE 
                         EVENTHUBCLIENT_LL_STRUCT* ehClientLLData = (EVENTHUBCLIENT_LL_STRUCT*)eventHubClientLLHandle;
                         newEntry->callback = sendAsyncConfirmationCallback;
                         newEntry->context = userContextCallback;
+                        Lock(ehClientLLData->outgoingEventsLock);
+                        ehClientLLData->currentNumberOfMessagesPendingSend++;
                         DList_InsertTailList(&(ehClientLLData->outgoingEvents), &(newEntry->entry));
+                        Condition_Post(ehClientLLData->outgoingEventAvailable);
+                        Unlock(ehClientLLData->outgoingEventsLock);
                         /* Codes_SRS_EVENTHUBCLIENT_LL_07_015: [On success EventHubClient_LL_SendBatchAsync shall return EVENTHUBCLIENT_OK.] */
                         result = EVENTHUBCLIENT_OK;
                     }
@@ -916,14 +948,40 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
     if (ehStruct != NULL)
     {
         PDLIST_ENTRY currentListEntry;
-        /* Codes_SRS_EVENTHUBCLIENT_LL_04_019: [If the current status of the entry is WAITING_TO_BE_SENT and there is available spots on proton, defined by OUTGOING_WINDOW_SIZE, EventHubClient_LL_DoWork shall call create pn_message and put the message into messenger by calling pn_messenger_put.]  */
-        currentListEntry = ehStruct->outgoingEvents.Flink;
-        while (currentListEntry != &(ehStruct->outgoingEvents))
+        
+        /* Codes_SRS_EVENTHUBCLIENT_LL_04_021: [If there are message to be sent, EventHubClient_LL_DoWork shall call pn_messenger_send with parameter -1.] */
+        Lock(ehStruct->outgoingEventsLock);
+        int willWait = (ehStruct->currentNumberOfMessagesWaitingForAck == 0 &&
+                        ehStruct->currentNumberOfMessagesPendingSend == 0);
+        Unlock(ehStruct->outgoingEventsLock);
+        
+        if ( willWait )
         {
+            Condition_Wait(ehStruct->outgoingEventAvailable,
+                           ehStruct->outgoingEventAvailableLock,
+                           0);
+        }
+        
+        /* Codes_SRS_EVENTHUBCLIENT_LL_04_019: [If the current status of the entry is WAITING_TO_BE_SENT and there is available spots on proton, defined by OUTGOING_WINDOW_SIZE, EventHubClient_LL_DoWork shall call create pn_message and put the message into messenger by calling pn_messenger_put.]  */
+        
+        Lock(ehStruct->outgoingEventsLock);
+        currentListEntry = ehStruct->outgoingEvents.Flink;
+        Unlock(ehStruct->outgoingEventsLock);
+        while (1)
+        {
+            Lock(ehStruct->outgoingEventsLock);
+            int breakOut = (currentListEntry == &(ehStruct->outgoingEvents));
+            Unlock(ehStruct->outgoingEventsLock);
+            
+            if ( breakOut)
+                break;
+            
             DLIST_ENTRY savedFromCurrentListEntry;
             PEVENTHUB_EVENT_LIST currentWork = containingRecord(currentListEntry, EVENTHUB_EVENT_LIST, entry);
+            Lock(ehStruct->outgoingEventsLock);
             savedFromCurrentListEntry.Flink = currentListEntry->Flink; // We need to save this because it will be stomped on when we remove it from the list.
-
+            Unlock(ehStruct->outgoingEventsLock);
+            
             if (currentWork->currentStatus == WAITING_FOR_ACK)
             {
                 /* Codes_SRS_EVENTHUBCLIENT_LL_04_022: [If the current status of the entry is WAITING_FOR_ACK, than EventHubClient_LL_DoWork shall check status of this entry by calling pn_messenger_status.] */
@@ -934,14 +992,15 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
                 switch (result)
                 {
                     case PN_STATUS_PENDING:
-                        /* Codes_SRS_EVENTHUBCLIENT_LL_04_023: [If the status returned is PN_STATUS_PENDING EventHubClient_LL_DoWork shall do nothing.] */
+                        // let's make sure some work gets done
+                         pn_messenger_work(ehStruct->messenger, 0);
                         break;
                     case PN_STATUS_UNKNOWN:
                         confirmResult = EVENTHUBCLIENT_CONFIRMATION_UNKNOWN;
                         break;
                     case PN_STATUS_ACCEPTED:
                         confirmResult = EVENTHUBCLIENT_CONFIRMATION_OK;
-                        break;
+                        break;  
                     default:
                         LogError("pn_messenger_status return an unexpected status of %d.\r\n", result);
                         confirmResult = EVENTHUBCLIENT_CONFIRMATION_ERROR;
@@ -960,8 +1019,10 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
                     {
                         LogError("pn_messenger_settle failed. Error Code: %d\r\n", settleReturnCode);
                     }
+                    Lock(ehStruct->outgoingEventsLock);
                     DList_RemoveEntryList(currentListEntry);
-                    ehStruct->currentNumberOfMessageWaitingForAck--;
+                    Unlock(ehStruct->outgoingEventsLock);
+                    ehStruct->currentNumberOfMessagesWaitingForAck--;
                     for (size_t index = 0; index < currentWork->dataCount; index++)
                     {
                         EventData_Destroy(currentWork->eventDataList[index]);
@@ -969,18 +1030,24 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
                     free(currentWork->eventDataList);
                     free(currentWork);
                     // Move the current entry to the saved entry
+                    Lock(ehStruct->outgoingEventsLock);
                     currentListEntry = savedFromCurrentListEntry.Flink;
+                    Unlock(ehStruct->outgoingEventsLock);
                 }
                 else
                 {
                     // Move the current entry to the next entry
+                    Lock(ehStruct->outgoingEventsLock);
                     currentListEntry = currentListEntry->Flink;
+                    Unlock(ehStruct->outgoingEventsLock);
                 }
             }
-            else if (ehStruct->currentNumberOfMessageWaitingForAck >= OUTGOING_WINDOW_BUFFER)
+            else if (ehStruct->currentNumberOfMessagesWaitingForAck >= OUTGOING_WINDOW_BUFFER)
             {
                 // Move the current entry to the next entry
+                Lock(ehStruct->outgoingEventsLock);
                 currentListEntry = currentListEntry->Flink;
+                Unlock(ehStruct->outgoingEventsLock);
                 break;
             }
             else if (currentWork->currentStatus == WAITING_TO_BE_SENT)
@@ -995,7 +1062,10 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
                         currentWork->callback( (payloadResult == EVENTHUBCLIENT_ERROR) ? EVENTHUBCLIENT_CONFIRMATION_ERROR : EVENTHUBCLIENT_CONFIRMATION_EXCEED_MAX_SIZE, currentWork->context);
                     }
 
+                    Lock(ehStruct->outgoingEventsLock);
                     DList_RemoveEntryList(currentListEntry);
+                    ehStruct->currentNumberOfMessagesPendingSend--;
+                    Unlock(ehStruct->outgoingEventsLock);
                     for (size_t index = 0; index < currentWork->dataCount; index++)
                     {
                         EventData_Destroy(currentWork->eventDataList[index]);
@@ -1003,26 +1073,23 @@ void EventHubClient_LL_DoWork(EVENTHUBCLIENT_LL_HANDLE eventHubClient_LL_Handle)
                     free(currentWork->eventDataList);
                     free(currentWork);
                     // Move the current entry to the saved entry
+                    Lock(ehStruct->outgoingEventsLock);
                     currentListEntry = savedFromCurrentListEntry.Flink;
+                    Unlock(ehStruct->outgoingEventsLock);
                 }
                 else
                 {
-                    ehStruct->currentNumberOfMessageWaitingForAck++;
+                    ehStruct->currentNumberOfMessagesWaitingForAck++;
                     currentWork->currentStatus = WAITING_FOR_ACK;
                     // Move the current entry to the next entry
+                    Lock(ehStruct->outgoingEventsLock);
+                    ehStruct->currentNumberOfMessagesPendingSend--;
                     currentListEntry = currentListEntry->Flink;
+                    Unlock(ehStruct->outgoingEventsLock);
                 }
             }
         }
 
-        /* Codes_SRS_EVENTHUBCLIENT_LL_04_021: [If there are message to be sent, EventHubClient_LL_DoWork shall call pn_messenger_send with parameter -1.] */
-        if (ehStruct->currentNumberOfMessageWaitingForAck > 0)
-        {
-            int tempReturnCode = pn_messenger_send(ehStruct->messenger, ALL_MESSAGES_IN_OUTGOING_QUEUE);
-            if (tempReturnCode != PN_INPROGRESS && tempReturnCode != 0 )
-            {
-                LogError("pn_messenger_send failed with Error Code: %d.\r\n", tempReturnCode);
-            }
-        }
+        
     }
 }

@@ -62,15 +62,7 @@ static int EventhubClientThread(void* userContextCallback)
     EVENTHUBCLIENT_STRUCT* eventhubInfo = (EVENTHUBCLIENT_STRUCT*)userContextCallback;
     while (eventhubInfo->threadToContinue == THREAD_CONTINUE)
     {
-        if (Lock(eventhubInfo->lockInfo) == LOCK_OK)
-        {
-            EventHubClient_LL_DoWork(eventhubInfo->eventhubclientLLHandle);
-            (void)Unlock(eventhubInfo->lockInfo);
-        }
-        else
-        {
-            LOG_ERROR(EVENTHUBCLIENT_ERROR);
-        }
+        EventHubClient_LL_DoWork(eventhubInfo->eventhubclientLLHandle);
     }
     return 0;
 }
@@ -177,35 +169,25 @@ static int Execute_LowerLayerSendBatchAsync(EVENTHUBCLIENT_STRUCT* eventhubClien
 {
     int result;
 
-    /* Codes_SRS_EVENTHUBCLIENT_07_043: [Execute_LowerLayerSendBatchAsync shall Lock on the EVENTHUBCLIENT_STRUCT lockInfo to protect calls to Lower Layer and Thread function calls.] */
-    if (Lock(eventhubClientInfo->lockInfo) == LOCK_OK)
+    /* Codes_SRS_EVENTHUBCLIENT_07_045: [Execute_LowerLayerSendAsync shall call into the Create_DoWorkThreadIfNeccesary function to create the DoWork thread.] */
+    if (Create_DoWorkThreadIfNeccesary(eventhubClientInfo) == 0)
     {
-        /* Codes_SRS_EVENTHUBCLIENT_07_045: [Execute_LowerLayerSendAsync shall call into the Create_DoWorkThreadIfNeccesary function to create the DoWork thread.] */
-        if (Create_DoWorkThreadIfNeccesary(eventhubClientInfo) == 0)
+        /* Codes_SRS_EVENTHUBCLIENT_07_048: [Execute_LowerLayerSendAsync shall call EventHubClient_LL_SendAsync to send data to the Eventhub Endpoint.] */
+        result = EventHubClient_LL_SendBatchAsync(eventhubClientInfo->eventhubclientLLHandle, eventDataList, count, notificationCallback, userContextCallback);
+        if (result != EVENTHUBCLIENT_OK)
         {
-            /* Codes_SRS_EVENTHUBCLIENT_07_048: [Execute_LowerLayerSendAsync shall call EventHubClient_LL_SendAsync to send data to the Eventhub Endpoint.] */
-            result = EventHubClient_LL_SendBatchAsync(eventhubClientInfo->eventhubclientLLHandle, eventDataList, count, notificationCallback, userContextCallback);
-            if (result != EVENTHUBCLIENT_OK)
-            {
-                /* Codes_SRS_EVENTHUBCLIENT_07_049: [If the EventHubClient_LL_SendAsync call fails then Execute_LowerLayerSendAsync shall return a nonzero value.] */
-                result = __LINE__;
-            }
-            else
-            {
-                /* Codes_SRS_EVENTHUBCLIENT_07_047: [If Execute_LowerLayerSendAsync is successful then it shall return 0.] */
-                result = 0;
-            }
+            /* Codes_SRS_EVENTHUBCLIENT_07_049: [If the EventHubClient_LL_SendAsync call fails then Execute_LowerLayerSendAsync shall return a nonzero value.] */
+            result = __LINE__;
         }
         else
         {
-            /* Code_SRS_EVENTHUBCLIENT_07_046: [If Create_DoWorkThreadIfNeccesary does not return 0 then Execute_LowerLayerSendAsync shall return a nonzero value.] */
-            result = __LINE__;
+            /* Codes_SRS_EVENTHUBCLIENT_07_047: [If Execute_LowerLayerSendAsync is successful then it shall return 0.] */
+            result = 0;
         }
-        (void)Unlock(eventhubClientInfo->lockInfo);
     }
     else
     {
-        /* Codes_SRS_EVENTHUBCLIENT_07_044: [Execute_LowerLayerSendBatchAsync shall return a nonzero value if it is unable to obtain the lock with the Lock function.] */
+        /* Code_SRS_EVENTHUBCLIENT_07_046: [If Create_DoWorkThreadIfNeccesary does not return 0 then Execute_LowerLayerSendAsync shall return a nonzero value.] */
         result = __LINE__;
     }
     return result;
